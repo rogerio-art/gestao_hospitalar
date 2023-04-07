@@ -1,0 +1,12 @@
+[15-Nov-2021 10:05:28 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:28 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:28 UTC] PHP Warning:  include(): Failed opening '../inc/connect.php ' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:40 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:40 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:40 UTC] PHP Warning:  include(): Failed opening '../inc/connect.php ' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:58 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:58 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:05:58 UTC] PHP Warning:  include(): Failed opening '../inc/connect.php ' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:06:36 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:06:36 UTC] PHP Warning:  include(../inc/connect.php ): failed to open stream: No such file or directory in /home/clinicasau/public_html/Index/index.php on line 11
+[15-Nov-2021 10:06:36 UTC] PHP Warning:  include(): Failed opening '../inc/connect.php ' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/clinicasau/public_html/Index/index.php on line 11

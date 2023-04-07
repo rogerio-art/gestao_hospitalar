@@ -1,0 +1,13 @@
+Em anexo o printe com a configuração.
+e os dados de configuração a baixo.
+
+
+Adress: fluoz.zeno.fm
+Port: 80
+Password: hRpq3pME
+ice cast MountPoint: d91bup73pf9uv/source
+Type: Icecast.
+
+O resto das opções não precisa alterar.
+
+qualquer tema estamos ao dispor para o que considerar necessário
