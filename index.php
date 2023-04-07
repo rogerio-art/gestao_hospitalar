@@ -68,7 +68,7 @@ https://templatemo.com/tm-566-medic-care
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="http://www.clinica-saude.ao"><font color="white">Visitar Web site para mais informação guy</font></a>
+                                <a class="nav-link" href="http://www.clinica-saude.ao"><font color="white">Visitar Web site para mais informação</font></a>
                             </li>
 						
 								
