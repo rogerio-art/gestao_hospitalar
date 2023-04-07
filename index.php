@@ -52,7 +52,7 @@ https://templatemo.com/tm-566-medic-care
                 <div class="container">
                     <a class="navbar-brand mx-auto d-lg-none" href="index.php">
                         
-                        <strong class="d-block"><font color="white">Clínica Saúde Rosa ejb k andre</font></strong>
+                        <strong class="d-block"><font color="white">Clínica Saúde</font></strong>
                     </a>
 
 
@@ -68,7 +68,7 @@ https://templatemo.com/tm-566-medic-care
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="http://www.clinica-saude.ao"><font color="white">Visitar Web site para mais informação</font></a>
+                                <a class="nav-link" href="http://www.clinica-saude.ao"><font color="white">Visitar Web site para mais informação guy</font></a>
                             </li>
 						
 								
