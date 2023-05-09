@@ -10,7 +10,7 @@
                     <div class="col-md-6">
                         <ul class="nav justify-content-md-end footer-menu">
                         <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('../pacient.php'); ?>"><?php echo get_phrase('Inicio'); ?></a>
+                                <a class="nav-link" href="<?php echo site_url('../index.php'); ?>"><?php echo get_phrase('Inicio'); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url('../actividades.php'); ?>"><?php echo get_phrase('area do paciente'); ?></a>

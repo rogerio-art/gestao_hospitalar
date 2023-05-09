@@ -31,7 +31,7 @@
                           <div class="subtitle"><?php echo get_phrase('Confirme seus dados de usuario para inicar o chate'); ?>.</div>
                       </div>
                       <form action="<?php echo site_url('login/validate_login/user'); ?>" method="post">
-                          <div class="content-box">
+                          <div class="content-box">S
                               <div class="basic-group">
                                   <div class="form-group">
                                       <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo get_phrase('email'); ?>:</label>
@@ -54,7 +54,7 @@
                               <a href="javascript::" onclick="toggoleForm('forgot_password')"><?php echo get_phrase('Esqueceu sua senha?'); ?></a>
                           </div>
                           <div class="account-have text-center">
-                              <?php echo get_phrase('ainda_nao_tenho_uma_conta'); ?>? <a href=".././signup.php"><?php echo get_phrase('Regista se Agora'); ?></a>
+                              <?php echo get_phrase('ainda_nao_tenho_uma_conta'); ?>? <a href="../signup.php"><?php echo get_phrase('Regista se Agora'); ?></a>
                           </div>
                       </form>
                   </div>

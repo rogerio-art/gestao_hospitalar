@@ -97,7 +97,7 @@
 				</a>
 			</li>
 
-			<!-- <li class="side-nav-item">
+			<li class="side-nav-item">
 			<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'system_settings' || $page_name == 'frontend_settings' || $page_name == 'payment_settings' || $page_name == 'instructor_settings' || $page_name == 'smtp_settings' || $page_name == 'manage_language' || $page_name == 'about' || $page_name == 'themes' || $page_name == 'mobile_app' ): ?> active <?php endif; ?>">
 				<i class="dripicons-toggles"></i>
 				<span> <?php echo get_phrase('settings'); ?> </span>
@@ -132,6 +132,6 @@
 					<a href="<?php echo site_url('admin/mobile_app'); ?>"><?php echo get_phrase('mobile_app'); ?></a>
 				</li>
 			</ul>
-		</li> -->
+		</li>
 	    </ul>
 </div>

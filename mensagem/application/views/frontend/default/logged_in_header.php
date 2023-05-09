@@ -16,7 +16,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                         <img src="<?php echo base_url().'uploads/system/logo-dark.png'; ?>" alt="" height="35">
                     </a>
 
-                    <?php // include 'menu.php'; ?>
+                    <?php// include 'menu.php'; ?>
 
 
                     <form class="inline-form" action="" method="get" style="width: 100%;">
@@ -28,7 +28,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                         </div>
                     </form>
 
-                    <!-- <?php // if (get_settings('allow_instructor') == 1): ?>
+                    <!-- <?php// if (get_settings('allow_instructor') == 1): ?>
                         <div class="instructor-box menu-icon-box">
                             <div class="icon">
                                 <a href="../../marcarconsulta.php" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0;"><?php echo get_phrase('Marcar'); ?></a>
