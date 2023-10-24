@@ -2,10 +2,10 @@
 session_start();
 ?>
 <?php
-// if(!isset($_SESSION['username']))
-// {// echo "string";exit();
-//   header("location:../index.php");
-// }
+ if(!isset($_SESSION['username']))
+ {// echo "string";exit();
+  header("location:../index.php");
+}
 ?>
 <?php
 include"../inc/connect.php ";
@@ -13,8 +13,6 @@ include"../inc/connect.php ";
 ?>
 <?php include"../Include/header.php";?>
 <?php include"../Include/sidebar.php";?>
-
-
 
 <div class="content-wrapper">
 <section class="content-header">

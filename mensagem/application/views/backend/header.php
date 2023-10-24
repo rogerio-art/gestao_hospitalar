@@ -26,7 +26,7 @@
 </a>
 <div class="app-search">
     <h4 style="color: #fff; float: left;"> <?php echo get_phrase('Clinica-Saude'); ?></h4>
-    <a href="<?php echo site_url('../Index'); ?>" target="" class="btn btn-outline-light ml-3"><?php echo get_phrase('Vlotar'); ?></a>
+    <a href="<?php echo site_url('../Index'); ?>" target="" class="btn btn-outline-light ml-3"><?php echo get_phrase('Voltar'); ?></a>
 </div>
 </div>
 </div>

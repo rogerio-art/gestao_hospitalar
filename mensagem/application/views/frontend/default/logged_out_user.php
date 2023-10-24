@@ -1,5 +1,5 @@
 
-    <div class="row">
+<div class="row">
       <div class="col">
         <nav class="navbar navbar-expand-lg "STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 20px; background-color: #0d6efd;">
 
@@ -50,4 +50,3 @@
         </nav>
       </div>
     </div>
-

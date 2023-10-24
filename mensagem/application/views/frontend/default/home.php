@@ -31,7 +31,7 @@
                           <div class="subtitle"><?php echo get_phrase('Confirme seus dados de usuario para inicar o chate'); ?>.</div>
                       </div>
                       <form action="<?php echo site_url('login/validate_login/user'); ?>" method="post">
-                          <div class="content-box">S
+                          <div class="content-box">
                               <div class="basic-group">
                                   <div class="form-group">
                                       <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo get_phrase('email'); ?>:</label>
@@ -122,7 +122,7 @@
     </div>
 </section>
 
-<script type="text/javascript">
+<script type="text/javascript"> 
   function toggoleForm(form_type) {
     if (form_type === 'login') {
       $('.login-form').show();
@@ -139,3 +139,4 @@
     }
   }
 </script>
+

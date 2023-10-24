@@ -76,10 +76,10 @@ $sql="SELECT * FROM patientregister";
    
         </li>
 
-        <!--li>
-        <a class="nav-link"  href="./mensagem"><i class="fa fa-send"></i><span>Chat</span></a>
+        <li>
+        <a class="nav-link"  href="./mensagem/home/my_messages"><i class="fa fa-send"></i><span>Chat</span></a>
    
-        </li-->
+        </li>
 
         
         <li>

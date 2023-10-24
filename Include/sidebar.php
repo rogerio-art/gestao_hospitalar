@@ -187,10 +187,6 @@
           </ul>  
              
         </li>
-        <li>
-        <!--a class="nav-link"  href="../mensagem/home/my_messages"><i class="fa fa-send"></i><span>Chat</span></a-->
-   
-        </li>
 
         <li>
            <li class="treeview">
@@ -205,10 +201,9 @@
           <li><a href="../Admin/acess.php"><i class="fa fa-edit"></i>  Criar Admin/Médico</a></li>
         
           </ul>
-        </li>
-
-         
-         
+          <li>
+        <a class="nav-link"  href="../mensagem/home/my_messages"><i class="fa fa-send"></i><span>Chat</span></a>
+   
         </li>
         </ul>
         

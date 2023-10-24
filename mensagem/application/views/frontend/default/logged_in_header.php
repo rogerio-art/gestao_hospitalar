@@ -12,7 +12,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                         <li><a class="mobile-search-trigger" href="#mobile-search">Pesquisar<span></span></a></li>
                     </ul>
 
-                    <a href="<?php echo site_url('../index.php'); ?>" class="navbar-brand" href="#">
+                    <a href="<?php echo site_url('../actividades.php'); ?>" class="navbar-brand" href="#">
                         <img src="<?php echo base_url().'uploads/system/logo-dark.png'; ?>" alt="" height="35">
                     </a>
 
