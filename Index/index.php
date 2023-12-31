@@ -7,8 +7,9 @@ session_start();
   header("location:../index.php");
 }
 ?>
+
 <?php
-include"../inc/connect.php ";
+
 //echo "string"; exit;
 ?>
 <?php include"../Include/header.php";?>

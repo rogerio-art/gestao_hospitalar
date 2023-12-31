@@ -2,13 +2,13 @@
 session_start();
 ?>
 <?php
-// if(!isset($_SESSION['username']))
-// {// echo "string";exit();
-//   header("location:../index.php");
-// }
+if(!isset($_SESSION['username']))
+{// echo "string";exit();
+  header("location:../index.php");
+}
 ?>
 <?php
-include("../inc/connect.php ");
+
 //echo "string"; exit;
 ?>
 <?php include"../Include/headerMedico.php";?>

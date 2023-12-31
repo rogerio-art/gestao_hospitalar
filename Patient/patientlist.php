@@ -126,7 +126,7 @@ function mysql_fetch_all($query)
                              <?php
                            }
                            ?>
-  <!-- <a href="delete.php?id=<?php echo $row['id']; ?>"><span class="btn btn-danger"><i class="fa fa-trash-o"></i>Apagar </span></a></td> -->
+  <a href="delete.php?id=<?php echo $row5['id']; ?>"><span class="btn btn-danger"><i class="fa fa-trash-o"></i>Apagar </span></a></td>
 </tr>
 <?php }  ?>
   </tbody>

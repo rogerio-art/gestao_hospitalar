@@ -4,7 +4,7 @@ include"../Include/header.php";
 include"../Include/sidebar.php";
 
     //session_start();
-  $sql=mysqli_query($connection,"SELECT * FROM patientregister WHERE id='".$_GET['id']."'");
+  //$sql=mysqli_query($connection,"SELECT * FROM patientregister WHERE id='".$_GET['id']."'");
   $write =mysqli_query($connection,"SELECT * FROM patientregister WHERE id='".$_GET['id']."'") or die(mysqli_error($connection));
  // print_r($sql); exit;
     $row=mysqli_fetch_array($write)or die (mysqli_error($connection));

@@ -125,7 +125,7 @@ $ ("#categoryselect") .change(function(){
         <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="./Index"><i class="fa fa-dashboard"></i> Casa</a></li>
+        <li><a href="../Index"><i class="fa fa-dashboard"></i> Casa</a></li>
         <li class="active"></li>
       </ol>
     </section>
