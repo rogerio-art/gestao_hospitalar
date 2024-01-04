@@ -77,8 +77,7 @@
 <div class="col-md-12">
 <label for="inputState" class="form-label">Digite Sua Mensagem</label>
                     
-                        <textarea type="text" name="mensagem" id="mensagem" class="form-control" cols=100 rows="10" required="required"></textarea>
-              
+<textarea id="editor1" name="mensagem" class="form-control"  ></textarea>
                     </div>
 
                     
@@ -108,4 +107,31 @@
 </div>   
      <?php include('footer.php'); ?> 
      </html>
+
+     <script src="./bower_components/ckeditor/ckeditor.js">
+</script>
+<script>
+  $(function () { 
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+
+  $(function () { 
+    // Replace the <textarea id="editor2"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor2')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+   $(function () { 
+    // Replace the <textarea id="editor3"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor3')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script>
  

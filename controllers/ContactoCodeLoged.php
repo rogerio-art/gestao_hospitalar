@@ -50,32 +50,40 @@
     ?>
 
 <?php
-    if(isset($_POST["submit"])) {
-        $id  = $_POST["id"];
-        $nome  = $_POST["nome"];
-        $email     = $_POST["email"];
-        $assunto      = $_POST["assunto"];
-        $mensagem         = $_POST["mensagem"];
-        $telefone  = $_POST["telefone"];
-        $contactType  = $_POST["contactType"];
-      
-        
-   
-      //upload file inicio
-        $d1=date('Y-m-d');
-        $patient=$_POST['email'];
-        $title=$_POST['email'];
+if (isset($_POST["submit"])) {
+    $id = $_POST["id"];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $assunto = $_POST["assunto"];
+    $mensagem = $_POST["mensagem"];
+    $telefone = $_POST["telefone"];
+    $contactType = $_POST["contactType"];
 
-        $target_dir="../Upload/File/";
-$name=$_FILES["file"]["name"];
-$type = $_FILES["file"]["type"];
-$size = $_FILES["file"]["size"];
+    // Upload file inicio
+    $d1 = date('Y-m-d');
+    $patient = $_POST['email'];
+    $title = $_POST['email'];
 
-$temp = $_FILES["file"]["tmp_name"]; 
-$error = $_FILES["file"]["error"];//size
- //echo "string"; exit;
- move_uploaded_file($temp,"./Upload/File/".$name);//move upload file  
- // echo"Upload Complete";  
+    $target_dir = "../Upload/File/";
+    $name = $_FILES["file"]["name"];
+    $type = $_FILES["file"]["type"];
+    $size = $_FILES["file"]["size"];
+
+    // Check if the file size is within the limit (10 megabytes)
+    if ($size <= 10 * 1024 * 1024) {
+        $temp = $_FILES["file"]["tmp_name"];
+        $error = $_FILES["file"]["error"];
+
+        // Move the uploaded file if there are no errors
+        if ($error === UPLOAD_ERR_OK) {
+            move_uploaded_file($temp, "./Upload/File/" . $name);
+            //echo "Upload Complete";
+        } else {
+            echo "Error uploading file. Please try again.";
+        }
+    } else {
+        echo "File size exceeds the limit. Please upload a file up to 10 megabytes.";
+    }
 }
 //print_r($_FILES); exit();
 
@@ -105,7 +113,7 @@ $error = $_FILES["file"]["error"];//size
 
         
                     // Query
-                    $sql = "INSERT INTO contacto (name, email, assunto, mensagem, telefone, contactType, file) VALUES ('{$nome}', '{$email}', '{$assunto}', '{$mensagem}', '{$telefone}','{$contactType}', '{$name}')";
+                    $sql = "INSERT INTO contacto (userID, name, email, assunto, mensagem, telefone, contactType, file) VALUES ('{$id}', '{$nome}', '{$email}', '{$assunto}', '{$mensagem}', '{$telefone}','{$contactType}', '{$name}')";
                     
                     // Create mysql query
                     $sqlQuery = mysqli_query($connection, $sql);

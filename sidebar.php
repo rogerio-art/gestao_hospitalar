@@ -69,11 +69,18 @@ $sql="SELECT * FROM patientregister";
         <a class="nav-link"  href="./Medico.php"><i class="fa fa-user"></i><span> Médico Login</span></a>
         </li> -->
 
-
-      
-           <li>
-        <a class="nav-link"  href="./recrutamentoLoged.php"><i class="fa fa-phone"></i><span>Candidatura/Contacto</span></a>
-   
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-phone"></i> <span> Contacto</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a href="./contactosRecebidos.php"><i class="fa fa-phone"></i> Entrada</a></li>
+          <li><a href="./contactosEnviados.php"><i class="fa fa-phone"></i> Enviado</a></li>
+          <li><a class="nav-link"  href="./recrutamentoLoged.php"><i class="fa fa-send"></i><span> Candidatura/Contacto</span></a></li>
+         </ul>
         </li>
 
         <li>

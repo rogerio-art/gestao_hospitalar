@@ -1,6 +1,5 @@
 
 <?php include('config/db.php'); ?>
-
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 
@@ -11,15 +10,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!-- Bootstrap 3.3.7 -->                                       
      <link rel="stylesheet" type="text/css"  href="print.css" media="print">
-
         </head>
-    
         <!-- Page contentfaz a pagina se ajustar dentro do header e do sidbar-->
-        
         <?php
         $s="SELECT * FROM addappointment  WHERE  patient='".$_SESSION['id']."'";
 $query=mysqli_query($connection,$s)or die (mysqli_error($connection));
-
 $numrows=mysqli_num_rows($query)or die (mysqli_error($connection));
 $row1=mysql_fetch_all($query);
 function mysql_fetch_all($query) {
@@ -31,10 +26,7 @@ function mysql_fetch_all($query) {
 //print_r($row1); exit;
 //$row1[]=mysql_fetch_assoc($query)or die (mysql_error());
 ?>
-
     <!-- Content Header (Page header) -->
-   
-
         <br><br>
 <div class="content-wrapper">
 <section class="content-header">
@@ -102,7 +94,7 @@ Minhas Consultas
  if ($date_now= date("Y-m-d") > $row['app_date'] && $row['estado']=='1'  ){
     ?>  
      <td>
-   <label type="" class=""><i class=""></i><font color="blue"> Processado </font></label>    
+   <label type="" class=""><i class=""></i><font color="green"> Processado </font></label>    
    </td>
   <?php
   }

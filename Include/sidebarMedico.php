@@ -9,8 +9,8 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-        <?php  if(isset($_SESSION['username'])){
-                           ?>
+        <?php  if(isset($_SESSION['username'])){?>
+                           
 
 <img src="../Upload/Adminprofile/<?php echo $_SESSION['profile'];?>"  class="img-circle"  alt="User Image">
            </div>
@@ -20,7 +20,7 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           <?php  } ?>
         </div>
-      </div>
+      </div>          
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
