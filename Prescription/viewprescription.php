@@ -158,7 +158,7 @@ function mysql_fetch_all($query) {
                      <tbody>
 
                                 <tr>
-                                <td "><?php echo $row['medication'];   ?> </td>
+                                <td><?php echo $row['medication'];   ?> </td>
                                       </tr>
 
                      </tbody>

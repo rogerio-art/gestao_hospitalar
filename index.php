@@ -151,7 +151,7 @@ https://templatemo.com/tm-566-medic-care
 					<div class="text list_1_of_2">
 					<a href="login.php"><h3>Paciente</h3></a>
 						<p id="autoResize">Entrar como Paciente</p>
-						  <div class="button"><span><a href="login.php">Clica Aqui</a></span></div>
+						  <div class="button"><span><a href="./login.php">Clica Aqui</a></span></div>
 					</div>
 				
 				</div>	
@@ -178,21 +178,16 @@ https://templatemo.com/tm-566-medic-care
 				
 						<a href="admin.php">	  <img src="images/grid-img2.png" ></a>
 					</div>
-					
-				 
 					<div class="text list_1_of_2">
 						<a href="admin.php">  <h3>Admin</h3></a>
 						<p id="autoResize">Entrar como admin</p>
 						  <div class="button"><span><a href="admin.php">Clica Aqui</a></span></div>
 				
-		
 					 </div>
 				</div>			
 			</div>
 		    </div>
 		   </div>
-
-		 
 		   <div class="clear"> </div>
 		   <div class="footer">
 		   	 <div class="wrap">

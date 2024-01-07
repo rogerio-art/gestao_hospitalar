@@ -168,9 +168,21 @@
            </li>
        
         <li>
-          <a href="../Admin/recrutamento.php">
-            <i class="fa fa-envelope"></i> <span>Ver Contacto</span>
-         </a>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>Contacto</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a href="../Admin/recrutamento.php"><i class="fa fa-envelope"></i> <span> Recebido</span></a></li>
+          <li><a href="../Admin/EnviadosContacto.php"><i class="fa fa-envelope"></i>  Enviado</a></li>
+          </ul>
+           </li>
+       
+        
         </li>
         <li class="treeview">
           <a href="#">

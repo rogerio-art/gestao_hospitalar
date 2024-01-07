@@ -1,4 +1,13 @@
-
+<?php
+session_start();
+?>
+<?php
+   if(!isset($_SESSION["email"])) {
+    header("Location: ./Validar_user_logado.php");
+   ?>
+   <?php
+   }else
+   ?> 
 <!doctype html>
         <html lang="en">
         <head>
@@ -11,11 +20,6 @@
 <?php include('header.php'); ?>
 <?php include('sidebar.php'); ?>
 
-   <!-- Bootstrap 3.3.7 -->                                       
-   
-
-       
- <!-- The sidebar -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <body>

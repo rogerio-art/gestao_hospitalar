@@ -43,7 +43,7 @@
 
     // Database connection
     include('config/db.php');
-    require_once './vendor/autoload.php';
+   // require_once './vendor/autoload.php';
 
 
    
@@ -97,13 +97,13 @@ if (isset($_POST["submit"])) {
         if(!empty($email) && !empty($assunto) && !empty($id) && !empty($contactType) && !empty($mensagem) && !empty($telefone)){
             
             // check if user mensagem already exist
-            if($rowCount > 0) {
-                $mensagem_exist = '
-                    <div class="alert alert-danger" role="alert">
-                       O e-mail do usuário já existe!
-                    </div>
-                ';
-            } else {
+                if($rowCount > 0) {
+                    $mensagem_exist = '
+                        <div class="alert alert-danger" role="alert">
+                        O e-mail do usuário já existe!
+                        </div>
+                    ';
+                } else {
                 // clean the form data before sending to database
                 $_first_name = mysqli_real_escape_string($connection, $email);
                 $_last_name = mysqli_real_escape_string($connection, $assunto);

@@ -1,21 +1,17 @@
-
+<?php
+session_start();
+?>
+<?php
+   if(!isset($_SESSION["email"])) {
+    header("Location: ./Validar_user_logado.php");
+   ?>
+   <?php
+   }else 
+ 
+?>
 <?php include('config/db.php'); ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
-
-
-   <!-- Bootstrap 3.3.7 -->                                       
-
- 
-   <?php
-   // Database connection
-  
-   if($_SESSION["email"]) {
-   ?>
-   <?php
-   }else header("Location: ./Validar_user_logado.php");
- 
-?>
 
         <!doctype html>
         <html lang="en">
@@ -270,7 +266,53 @@
            </div>
         </div>
         <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-orange">
+            <div class="inner">
+                   <?php 
+                             $sql="SELECT count(*) FROM  contacto WHERE userID='".$_SESSION['id']."'";
+                  
+    $write =mysqli_query($connection,$sql) or die(mysqli_error($connection));
+     $row=mysqli_fetch_array($write)or die (mysqli_error($connection));
+   //print_r($row); exit;
+                ?>
+              <h3><?php echo $row[0];?></h3>
+
+              <p> Contacto</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <?php  if($row[0]<1){
+                           ?>
+                           
+                         
+                           <a href="#" class="small-box-footer"> Sem dados para mostrar <i class="fa fa-arrow-circle-right"></i></a>
+                        
+                         
+                         <?php
+                           }else{
+                            ?>
+                          
+                          <a href="./contactosEnviados.php" class="small-box-footer">Clica pra ver <i class="fa fa-arrow-circle-right"></i></a>
+         
+                           <?php
+                           }
+                           ?>
+
+            
+           </div>
+        </div>
+        <!-- ./col -->
        
+   
+            <!-- /.box-body -->
+          </div>
+          <!-- /. box -->
+        </div>
+        <!-- /.col -->
+    
    
             <!-- /.box-body -->
           </div>

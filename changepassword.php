@@ -1,12 +1,10 @@
+<?php include('config/db.php'); ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
-
-
 <?php
-session_start();
-include("./inc/connect.php") ;
+
  // echo "string"; exit();
-$user= $_SESSION['username'];
+//$user= $_SESSION['username'];
 
 	if(isset($_POST['submit']))
 	{ //print_r($_POST); exit();
@@ -53,26 +51,18 @@ else
 <head>
   <meta charset="UTF-8">
   <title> Recoperar senha</title>
-  <?php include('./css2/css.php'); ?>
-  <!-- Bootstrap 3.3.7 -->                                       
-  <link rel="stylesheet" href="CSS/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/app.css">
-    <link rel="stylesheet" href="CSS/all.min.css">
-    <script src="JS/bootstrap.bundle.min.js"></script>
-    
-    <script src="JS/app.js"></script>
        
   
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
    
        
 </head>
 
-
+<br>
+<br>
              <!-- Page content -->
-        <div class="content-wrapper">
+             <div class="content-wrapper">
         <section class="content-header">
       <h1>
       <font color="black">Login</font>  

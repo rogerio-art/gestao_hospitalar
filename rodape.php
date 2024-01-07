@@ -1,26 +1,35 @@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-
-<div class="container-fluid fixed-bottom rodape">
-     <div class="row">
-    
-   
-     <!-- /.content-wrapper -->
-  <footer class="main-footer">
- 
-    <div class="pull-right">
-     
-    </div>
-    <strong>Copyright &copy; 2021 <a href="http://clinica-saude.co.ao">Clínica-Saúde</a>.</strong> Todos Direitos Reservado...      <b>Verção</b> 1.0
-    
-  </footer>    
-          
-
-
-    </div>
-
-       
-        </div>
-        </div>
-        </div>
-</nav>
+<footer class="footer-area">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright-text">
+                        <a href="./index.php"><img src="./Upload/Adminprofile/Logotipo Clinica Saude.png" alt="" class="d-inline-block" width="65"></a>
+                           <a href="footer_link" target="_blank"></a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav justify-content-md-end footer-menu">
+                        <li class="nav-item">
+                                <a class="nav-link" href="./index.php">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./actividades.php">area do paciente</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./about.php">Sobre nos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./recrutamento.php">
+                                    Contacto
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php">
+                                    Login
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>

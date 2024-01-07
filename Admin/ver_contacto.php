@@ -56,15 +56,28 @@ $row=mysqli_fetch_array($query)or die (mysqli_error($connection));
  </div>
 <div class="box box-primary">
   <div class="box-header with-border">
-<i class=""></i> <h3 class="fa fa-envelope"> Mensagem</h3>
 <form method="POST" enctype="multipart/form-data" >
    <div class="box-body">
       <div class="col-md-12">
        <br>
-       <input type="text" name="fname" class="form-control" value="<?php echo $mensagem; ?>" readonly="readonly"><br>
-          
+       
           </div>
         </form> 
+        <table   class="table table-bordered table-hover " >
+                     <thead  >
+                         <tr>
+                             <th><i class=""></i> <h3 class="fa fa-envelope"> Mensagem</h3></th>
+                           
+                         </tr>
+                     </thead>
+                     <tbody>
+
+                                <tr>
+                                <td ><?php echo $mensagem;   ?> </td>
+                                      </tr>
+
+                     </tbody>
+        </table>
         <div class="box-footer">
            <!--  <button type="reset"  name="reset" class="btn btn-primary" value="reset"><i class="f fa fa-undo"></i> Reset</button> -->
               </div>
@@ -74,6 +87,7 @@ $row=mysqli_fetch_array($query)or die (mysqli_error($connection));
   </div>
 </section>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../Admin/recrutamento.php"><button type="button" name="cancel" class="btn btn-primary" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;"><i class="fa fa-times"></i> Voltar</button></a>
+&nbsp;<a href="ResponseContact.php?id=<?php echo $row['id']; ?>"><button type="button" name="cancel" class="btn btn-primary" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;"><i class="fa fa-raply"></i> Responder</button></a>
   
 </div>
 <?php include "../Include/footer.php";?>

@@ -4,7 +4,7 @@
 
 
 <?php 
-if(isset($_POST['login']))
+if(isset($_POST['loginuser']))
 {
 $username=$_POST['username'];
 ?>

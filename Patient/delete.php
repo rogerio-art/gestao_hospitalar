@@ -9,5 +9,5 @@ if(isset($_GET['id']))
               header("location:patientlist.php");
       }
       else
-      	echo "Sem Sucesso";
+      	echo "erro ao tentar eliminar usuário";
    ?>

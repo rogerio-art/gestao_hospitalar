@@ -1,4 +1,14 @@
 <?php
+session_start();
+?>
+<?php
+   if(!isset($_SESSION["email"])) {
+    header("Location: ./Validar_user_logado.php");
+   ?>
+   <?php
+   }else 
+   ?>
+<?php
 include('config/db.php');
 include('header.php');
 include('sidebar.php');
@@ -11,13 +21,6 @@ $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
 
-        <?php /*if (empty($row1)) : ?>
-            <p>Não foram encontrados dados.</p>
-        <?php else : ?>
-            <table id="example1" class="table table-bordered table-striped">
-                <!-- ... Your existing table code ... -->
-            </table>
-        <?php endif; */?>
     
 
 <?
@@ -147,11 +150,12 @@ $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
 <?php } ?>
      </tbody>
     </table>
-      </div>
-  
+   
+    </div>
+      </form>
+    </div>
+    </section>
 </div>
+<?php include "./footer.php";?>
+  </div>
 </div>
-</div>
-</section>
-</div> 
-<?php include('footer.php');?>

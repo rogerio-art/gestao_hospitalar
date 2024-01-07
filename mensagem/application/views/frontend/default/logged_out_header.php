@@ -3,10 +3,7 @@
       <div class="col">
         <nav class="navbar navbar-expand-lg "STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 20px; background-color: #0d6efd;">
 
-          <ul class="mobile-header-buttons">
-            <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
-            <li><a class="mobile-search-trigger" href="#mobile-search">Pesquisar<span></span></a></li>
-          </ul>
+          
 
           <a href="<?php echo site_url(''); ?>" class="navbar-brand" href="#">
           <div class="clearfix">
@@ -15,7 +12,7 @@
           <!-- <img src="<?php echo base_url().'uploads/system/logo-dark.png'; ?>" alt="" height="35" class="img-circle"> </a>  -->
 </div>
 </div>
-       
+
      
 
           <!-- <form class="inline-form" action="<?php //echo site_url('home/search'); ?>" method="get" style="width: 100%;">

@@ -1,6 +1,14 @@
-
+<?php
+session_start();
+?>
+<?php
+   if(!isset($_SESSION["email"])) {
+    header("Location: ./Validar_user_logado.php");
+   ?>
+   <?php
+   }else 
+   ?>
 <?php include('./controllers/marcarconsultaCode.php'); ?>
-
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 
@@ -166,9 +174,6 @@ while($row=mysqli_fetch_array($ret))
   <input type="time" class="form-control" name="Hora" id="timepickellllr1"   required="required">
             </div>
             </br></br>
-
-
-  
   <div class="form-group">
             <div class="col-md-6">
 															<label >
@@ -183,9 +188,6 @@ while($row=mysqli_fetch_array($ret))
   <div class="col-md-6">
    <input type="hidden" class="form-control" readonly="readonly"  name="id" id="id" value="<?php echo ($_SESSION ['id'] ); ?>"/>
   </div>
-
- 
- 
 
   <div class="col-md-12">
 </br>
