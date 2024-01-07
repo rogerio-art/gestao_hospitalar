@@ -1,13 +1,14 @@
 <?php
-session_start();
+//session_start();
 ?>
 <?php
-   if(!isset($_SESSION["email"])) {
-    header("Location: ./Validar_user_logado.php");
+//   if(!isset($_SESSION["email"])) {
+//    header("Location: ./Validar_user_logado.php");
    ?>
    <?php
-   }else 
-   ?>
+ //  }else 
+ 
+?>
 <?php include('./controllers/marcarconsultaCode.php'); ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
