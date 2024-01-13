@@ -1,13 +1,11 @@
 <?php
-//session_start();
+session_start();
 ?>
 <?php
-//   if(!isset($_SESSION["email"])) {
-//    header("Location: ./Validar_user_logado.php");
-   ?>
-   <?php
- //  }else 
- 
+ if(!isset($_SESSION['email']))
+ {// echo "string";exit();
+  header("location: ./Validar_user_logado.php");
+}
 ?>
 <!doctype html>
         <html lang="en">
