@@ -1,20 +1,18 @@
 <?php
-//session_start();
+session_start();
 ?>
 <?php
-//   if(!isset($_SESSION["email"])) {
-//    header("Location: ./Validar_user_logado.php");
-   ?>
-   <?php
- //  }else 
- 
-?>
+ if(!isset($_SESSION['email']))
+ {// echo "string";exit();
+  header("location: ./Validar_user_logado.php");
+}
+?>  
 <?php
 include('config/db.php');
 include('header.php');
 include('sidebar.php');
 
-$query = "SELECT * FROM contacto WHERE userID = '" . $_SESSION['id'] . "' ORDER BY id DESC";
+$query = "SELECT * FROM contacto WHERE userID = '" . $_SESSION['id'] . "' AND Direcao='enviadoUser' ORDER BY id DESC ";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 

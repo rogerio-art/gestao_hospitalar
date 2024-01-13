@@ -6,13 +6,13 @@ session_start();
  {// echo "string";exit();
   header("location: ./Validar_user_logado.php");
 }
-?>
+?>  
 <?php
 include('config/db.php');
 include('header.php');
 include('sidebar.php');
 
-$query = "SELECT * FROM contacto  WHERE Direcao ='Admin' AND userID = '" . $_SESSION['id'] . "'  ORDER BY id DESC";
+$query = "SELECT * FROM contacto WHERE userID = '" . $_SESSION['id'] . "' ORDER BY id DESC ";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -20,13 +20,6 @@ $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
 
-        <?php /*if (empty($row1)) : ?>
-            <p>Não foram encontrados dados.</p>
-        <?php else : ?>
-            <table id="example1" class="table table-bordered table-striped">
-                <!-- ... Your existing table code ... -->
-            </table>
-        <?php endif; */?>
     
 
 <?
@@ -125,7 +118,7 @@ $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
 
 <td>
   <a href="ver_contactoUser.php?id=<?php echo $row['id']; ?>" class="btn bg-blue">
-    <i class="fa fa-eye"></i> 
+    <i class="fa fa-eye"></i>
   </a>&nbsp;&nbsp;
 
   <a href="./Admin/donwload.php?file=<?php echo $row['file']; ?>" class="btn bg-blue">
@@ -146,15 +139,10 @@ $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
     <button class="btn btn-primary" disabled>
       <i class="fa fa-eye"></i> 
     </button>
-   
     <?php
   }
   ?>
-   <a href="./ResponseContactUser.php?id=<?php echo $row['id']; ?>"><span class="btn bg-blue"><i class="fa fa-send"></i> </span></a>
 </td>
-
-
-
 <!--a href="./Admin/deleted.php?id=<?php // +echo $row['id']; ?>"><span class="btn btn-danger"><i class="fa fa-trash-o"></i> Apagar</span></a></td-->
 
 </tr>

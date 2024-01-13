@@ -1,6 +1,15 @@
 <?php include('headerlogout.php');?>
+<!doctype html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="favicon" href="assets/frontend/default/img/icons/favicon.ico">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Lameira| Soft</title>
+        <link rel="favicon" href="assets/frontend/default/img/icons/favicon.ico">
 <link rel="apple-touch-icon" href="assets/frontend/default/img/icons/icon.png">
 <link rel="stylesheet" href="assets/frontend/default/css/jquery.webui-popover.min.css">
 <link rel="stylesheet" href="assets/frontend/default/css/select2.min.css">
@@ -35,8 +44,13 @@
 <script src="assets/frontend/default/js/bootstrap-tagsinput.min.js"></script>
 <script src="assets/frontend/default/js/custom.js"></script>
 
-
-
+<!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    
+    <body id="top">
 <section class="category-course-list-area">
     <div class="container">
         <div class="row justify-content-center">
@@ -51,8 +65,8 @@
                   </div>
                   <div class="user-dashboard-content w-100 register-form">
                       <div class="content-title-box">
-                          <div class="title">formulário de cadastro</div>
-                          <div class="subtitle">faça o seu registro.</div>
+                          <div class="title">Faça o seu registo</div>
+                          <!--div class="subtitle">faça o seu registro.</div-->
                       </div>
                       <form action="register.php" method="post">
                           <div class="content-box">
@@ -61,34 +75,34 @@
                                       <label for="first_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> nome:</label>
                                       <input type="text" class="form-control" name = "name" id="name" placeholder="name" value="" required>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="endereco"><span class="input-field-icon"><i class="fas fa-user"></i></span> endereco:</label>
-                                      <input type="text" class="form-control" name = "endereco" id="endereco" placeholder="endereco" value="" required>
-                                  </div>
+                                  <!--div class="form-group">
+                                      <label for="endereco"><span class="input-field-icon"><i class="fas fa-user"></i></span> endereco:</label-->
+                                      <input type="hidden" class="form-control" name = "endereco" id="endereco" placeholder="endereco" value="Viana" required>
+                                  <!--/div-->
 
-                                  <div class="form-group">
-                                      <label for="phone"><span class="input-field-icon"><i class="fas fa-user"></i></span> phone:</label>
-                                      <input type="text" class="form-control" name = "phone" id="phone" placeholder="phone" value="" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="phone"><span class="input-field-icon"><i class="fas fa-user"></i></span> idade:</label>
-                                      <input type="text" class="form-control" name = "yearsOld" id="yearsOld" placeholder="idade" value="" required>
-                                  </div>
+                                  <!--div class="form-group">
+                                      <label for="phone"><span class="input-field-icon"><i class="fas fa-user"></i></span> phone:</label-->
+                                      <input type="hidden" class="form-control" name = "phone" id="phone" placeholder="phone" value="944259591" required>
+                                  <!--/div-->
+                                  <!--div class="form-group"->
+                                      <label for="phone"><span class="input-field-icon"><i class="fas fa-user"></i></span> idade:</label-->
+                                      <input type="hidden" class="form-control" name = "yearsOld" id="yearsOld" placeholder="idade" value="30" required>
+                                  <!--/div-->
 
-                                  <div class="form-group">
-    <label for="inputState" class="form-label">Género</label>
-    <select id="genero"  name="genero"  class="form-control">
-      <option selected>Escolher</option>
+                                  <!--div class="form-group">
+    <label for="inputState" class="form-label">Género</label-->
+    <!--select type="hidden" id="genero"  name="genero"  class="form-control" value="Masculino"-->
+      <!--option selected>Escolher</option>
       <option>Masculino</option>
       <option>Femenino</option>
       <option>outro</option>
     </select>
-  </div>
+  </div-->
 
-                                  <div class="form-group">
-                                      <label for="cartaodesaude"><span class="input-field-icon"><i class="fas fa-user"></i></span> cartaodesaude:</label>
-                                      <input type="text" class="form-control" name = "cartaodesaude" id="cartaodesaude" placeholder="cartaodesaude" value="" required>
-                                  </div>
+                                  <!--div class="form-group">
+                                      <label for="cartaodesaude"><span class="input-field-icon"><i class="fas fa-user"></i></span> cartaodesaude:</label-->
+                                      <input type="hidden" class="form-control" name = "cartaodesaude" id="cartaodesaude" placeholder="cartaodesaude" value="1234567" required>
+                                  <!--/div-->
 
                                   <div class="form-group">
                                       <label for="registration-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> email:</label>
@@ -103,44 +117,27 @@
                           <div class="content-update-box">
                           <!--input  type="submit" name="submit" id="submit" class="form-control" value="Salvar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary"  /-->
   
-                              <button type="submit" class="btn">sign_up</button>
+                             
+                              <input name="submit" type="submit"  onclick="submit" id="log-btn" value="Salvar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary"  />
+                      
                           </div>
                           <div class="account-have text-center">
-                              already_have_an_account? <a href="javascript::" onclick="toggoleForm('login')">login</a>
+                              Já tem uma conta? <a href="./login.php">login</a>
                           </div>
                       </form>
                   </div>
 
-                  <div class="user-dashboard-content w-100 forgot-password-form hidden">
-                      <div class="content-title-box">
-                          <div class="title">forgot_password</div>
-                          <div class="subtitle">provide_your_email_address_to_get_password.</div>
-                      </div>
-                      <form action="login/forgot_password/frontend" method="post">
-                          <div class="content-box">
-                              <div class="basic-group">
-                                  <div class="form-group">
-                                      <label for="forgot-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> email:</label>
-                                      <input type="email" class="form-control" name = "email" id="forgot-email" placeholder="email" value="" required>
-                                      <small class="form-text text-muted">provide_your_email_address_to_get_password.</small>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="content-update-box">
-                              <button type="submit" class="btn">reset_password</button>
-                          </div>
-                          <div class="forgot-pass text-center">
-                              want_to_go_back? <a href="javascript::" onclick="toggoleForm('login')">login</a>
-                          </div>
+                  
+                          
                       </form>
                   </div>
               </div>
             </div>
         </div>
     </div>
-</section>
+    </section>
 <?php include('rodape.php'); ?>
-<script type="text/javascript">
+<script type="text/javascript"> 
   function toggoleForm(form_type) {
     if (form_type === 'login') {
       $('.login-form').show();
@@ -157,3 +154,5 @@
     }
   }
 </script>
+</body>
+</html>

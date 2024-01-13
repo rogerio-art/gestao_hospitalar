@@ -32,14 +32,14 @@
    <form method="POST" enctype="multipart/form-data" class="row g-3">
    <div class="col-md-6">
                         <label>Nome Completo</label>
-                        <input type="text" placeholder="" class="form-control" name="nome" id="nome" value=""  required="required" />
+                        <input type="text" placeholder="" class="form-control" name="nome" id="nome" value="<?php echo $_SESSION["name"]?>"  required="required" />
                        </div>
 
   
   
                         <div class="col-md-6">
                         <label>Seu e-mail</label>
-                        <input type="text" placeholder="" class="form-control" name="email" id="email" required="required" value="" />
+                        <input type="text" placeholder="" class="form-control" name="email" id="email" required="required" value="<?php echo $_SESSION["email"]?>" />
 
                      
                     </div>
@@ -54,7 +54,7 @@
                    
                     <div class="col-md-6">
                         <label>Telefone</label>
-                        <input type="text" class="form-control" name="telefone" required="required" id="telefone" value="" />
+                        <input type="text" class="form-control" name="telefone" required="required" id="telefone" value="<?php echo $_SESSION["phone"]?>" />
 
                     </div>
 

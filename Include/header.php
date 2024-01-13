@@ -1,9 +1,9 @@
 <?php include"../inc/connect.php";
  ?>
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Painel | Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -113,9 +113,9 @@
     <!-- Logo -->
     <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>G</b>H</span>
+      <span class="logo-mini"><b>L</b>S</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>CLÍNICA </b>SAÚDE</span>
+      <span class="logo-lg"><b>Lameira </b>Soft</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -162,7 +162,7 @@
                   <a href="../Admin/index.php" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="../logout.php" class="btn btn-default btn-flat">Sair</a>
+                  <a href="../logoutAdmin.php" class="btn btn-default btn-flat">Sair</a>
                 </div>
               </li>
             </ul>

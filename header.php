@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gestão | Hospitalar</title>
+  <title>Lameira | Soft</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -115,7 +115,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Clínica-</b>Saúde</span>
+      <span class="logo-lg"><b>Lameira-</b>Soft</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-fixed-top">
@@ -130,7 +130,7 @@
               <ul class="nav navbar-nav"><?php  if(isset($_SESSION['email'])){
                            ?>
                           <li > <a href="dashboard.php"><font color ="white">Olá: <?php echo  ($_SESSION ['name']); ?></font></a></li>
-                          <li > <a href="logout.php"><font color ="white">Sair</font></a></li>
+                          <li > <a href="logoutUser.php"><font color ="white">Sair</font></a></li>
                          
                          <?php
                            }else{

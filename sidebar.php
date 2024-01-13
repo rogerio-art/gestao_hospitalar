@@ -77,6 +77,8 @@ $sql="SELECT * FROM patientregister";
             </span>
           </a>
           <ul class="treeview-menu">
+            
+          <li><a href="./cTodosontactos.php"><i class="fa fa-phone"></i> Todos Contactos</a></li>
           <li><a href="./contactosRecebido.php"><i class="fa fa-phone"></i> Entrada</a></li>
           <li><a href="./contactosEnviados.php"><i class="fa fa-phone"></i> Enviado</a></li>
           <li><a class="nav-link"  href="./recrutamentoLoged.php"><i class="fa fa-send"></i><span> Candidatura/Contacto</span></a></li>

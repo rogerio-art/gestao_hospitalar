@@ -4,7 +4,7 @@
 <?php include('inc/connect.php');?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,55 +12,59 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Clínica| Saúde</title>
-        <?php //include('header3.php');?>
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <title>Lameira| Soft</title>
+        <link rel="favicon" href="assets/frontend/default/img/icons/favicon.ico">
+<link rel="apple-touch-icon" href="assets/frontend/default/img/icons/icon.png">
+<link rel="stylesheet" href="assets/frontend/default/css/jquery.webui-popover.min.css">
+<link rel="stylesheet" href="assets/frontend/default/css/select2.min.css">
+<link rel="stylesheet" href="assets/frontend/default/css/slick.css">
+<link rel="stylesheet" href="assets/frontend/default/css/slick-theme.css">
+<!-- font awesome 5 -->
+<link rel="stylesheet" href="assets/frontend/default/css/fontawesome-all.min.css">
 
-        <link href="cssi/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/frontend/default/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/frontend/default/css/bootstrap-tagsinput.css">
+<link rel="stylesheet" href="assets/frontend/default/css/main.css">
+<link rel="stylesheet" href="assets/frontend/default/css/responsive.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+<link rel="stylesheet" href="assets/global/toastr/toastr.css' ?>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nestable2/1.6.0/jquery.nestable.min.css" />
+<script src="assets/backend/js/jquery-3.3.1.min.js"></script>
 
-        <link href="cssi/bootstrap-icons.css" rel="stylesheet">
+<script src="assets/frontend/default/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="assets/frontend/default/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="assets/frontend/default/js/popper.min.js"></script>
+<script src="assets/frontend/default/js/bootstrap.min.js"></script>
+<script src="assets/frontend/default/js/slick.min.js"></script>
+<script src="assets/frontend/default/js/select2.min.js"></script>
+<script src="assets/frontend/default/js/tinymce.min.js"></script>
+<script src="assets/frontend/default/js/multi-step-modal.js"></script>
+<script src="assets/frontend/default/js/jquery.webui-popover.min.js"></script>
+<script src="https://content.jwplatform.com/libraries/O7BMTay5.js"></script>
+<script src="assets/frontend/default/js/main.js"></script>
+<script src="assets/global/toastr/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nestable2/1.6.0/jquery.nestable.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+<script src="assets/frontend/default/js/bootstrap-tagsinput.min.js"></script>
+<script src="assets/frontend/default/js/custom.js"></script>
 
-        <link href="cssi/owl.carousel.min.css" rel="stylesheet">
-
-        <link href="cssi/owl.theme.default.min.css" rel="stylesheet">
-
-        <link href="cssi/templatemo-medic-care.css" rel="stylesheet">
-
-
-   
-    <!-- Font Awesome -->
-  <!-- Ionicons -->
-   <!-- Select2 -->
-  <!-- Theme style -->
-<!--
-
-TemplateMo 566 Medic Care
-
-https://templatemo.com/tm-566-medic-care
-
--->
+<!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
     
     <body id="top">
-    
+
+  
         <main>
 
         <nav class="navbar navbar-expand-lg  fixed-top " STYLE ="color: white; background-color: #0d6efd;">
                 <div class="container">
                     <a class="navbar-brand mx-auto d-lg-none" href="index.php">
                         
-                        <strong class="d-block"><font color="white">Gestão Hospitalar</font></strong>
+                        <strong class="d-block"><font color="white">Lameira Soft</font></strong>
                     </a>
-
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon "></span>
-                    </button>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
@@ -81,155 +85,64 @@ https://templatemo.com/tm-566-medic-care
                 </div>
             </nav>
     
- <body>
- <div class="content">
-        <section class="content-header">
-    <h1>
-      <font color="black"> </font>  
-        <small></small>
-       </h1>
-
-     <ol class="breadcrumb">
-       <li><a href="./index.php"><i class="fa fa-dashboard"></i></a></li>
-    
-     </ol>
-   </section>
-   <section class="content">
-     <div class="box box-primary">
-       <div class="box-header with-border">
-
-    <form action="scriptadmin.php"  method="post" class="col-sm-8 offset-sm-2">
-      <div class="row">
-      <center>  <h1><i class="fa fa-user"></i> Login Admin</h1></center>
-        <div class="form-group">
-          <label class="col-sm-1 control-label" for="e-mail"><i class="fa fa-envelope">Email</i></label>
-          <div class="col-sm-12" >
-            <input class="form-control" id="e-mail" name="username" type="email" />
-          </div>
+<section class="category-course-list-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="user-dashboard-box mt-3">
+                  <div class="user-dashboard-content w-100 login-form">
+                      <div class="content-title-box">
+                          <div class="title" >Login Admin</div>
+                          <div class="subtitle">Confirme seus dados de usuario para inicar.</div>
+                      </div>
+                      <form action="scriptadmin.php" method="post">
+                          <div class="content-box">
+                              <div class="basic-group">
+                                  <div class="form-group">
+                                      <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> email:</label>
+                                      <input type="email" class="form-control" name = "username" id="username" placeholder="email" value="" required>
+                                  </div>
+                                  <div  class="form-group">
+                                      <label for="login-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span> senha:</label>
+                                      <input type="password" class="form-control" name = "password" placeholder="password" value="" required>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="content-update-box">
+                              <input name="loginadmin" type="submit"  onclick="submit" id="log-btn" value="Entrar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary"  />
+                          </div>
+                          <div class="forgot-pass text-center">
+                              <span></span>
+                              <a href="changepassword.php">Esqueceu sua senha?</a>
+                          </div>
+                          <div class="account-have text-center">
+                              ainda não tem uma conta? <a href="./signup.php">Regista se Agora</a>
+                          </div>
+                      </form>
+                  </div> 
+                  </div>
+              </div>
+            </div>
         </div>
-
-        <br>
-        <div class="form-group">
-          
-          <label class="col-sm-1 control-label" for="password"><i class="fa fa-key">Senha</i></label>
-          <div class="col-md-12">
-            <input class="form-control" id="password" name="password" type="password"/>
-          </div>
-        </div>
-        <br>
-       
-          
-          <label class="col-sm-1 control-label" for="password"><font color="white"  <i class=""></i>Clica </label></font>
-          <div class="col-md-12">
-            <!-- <button class="form-control btnbackground-blue"  id="log-btn" name="login" type="submit"  class="btn btn-primary">Entrar</button>
-          <a href=""  id="submit" name="btn-lg" type="submit"   class="btn btn-primary">Entrar</a> -->
-       
-      <input name="loginadmin" type="submit"  onclick="submit" id="log-btn" value="Entrar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary"  />
-      </div>
-
-  
-    </form>
-    
-
-  </section>
-
-  <br>
-  <br>
+    </div>
+</section>
+<?php include('rodape.php'); ?>
+<script type="text/javascript"> 
+  function toggoleForm(form_type) {
+    if (form_type === 'login') {
+      $('.login-form').show();
+      $('.forgot-password-form').hide();
+      $('.register-form').hide();
+    }else if (form_type === 'registration') {
+      $('.login-form').hide();
+      $('.forgot-password-form').hide();
+      $('.register-form').show();
+    }else if (form_type === 'forgot_password') {
+      $('.login-form').hide();
+      $('.forgot-password-form').show();
+      $('.register-form').hide();
+    }
+  }
+</script>
 </body>
-</div>
-<br>
-
-
-<footer class="site-footer section-padding" id="contact">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-5 me-auto col-12">
-                        <h5 class="mb-lg-4 mb-3"><font color="white">Hora de Atendimento </font></h5>
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex">
-                            <font color="white">  Segunda</font>
-                            <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-
-                            <li class="list-group-item d-flex">
-                            <font color="white"> Terça</font>
-                            <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-
-                            <li class="list-group-item d-flex">
-                            <font color="white">Quarta</font>
-                                <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-                            <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex">
-                            <font color="white">   Quinta</font>
-                            <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-
-                            <li class="list-group-item d-flex">
-                            <font color="white"> Sexta</font>
-                                <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-
-                            <li class="list-group-item d-flex">
-                            <font color="white">Sábado</font>
-                                <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-                            <li class="list-group-item d-flex">
-                            <font color="white">  Domingo</font>
-                                <span><font color="white">Aberto 24h/24h</font></span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
-                        <h5 class="mb-lg-4 mb-3"><font color="white">Telefone</font></h5>
-
-                        <p><a href="mailto:atendimento@clinica-saude.co.ao"><font color="white">Email | atendimento@clinica-saude.co.ao</font></a><p>
-
-                        <p><font color="white">Localização |Zaire-Soyo Bairro Pangala Rua principal</font></p>
-                        <p><font color="white">Telefone |937 277 985 | 998 521 361 | 937 279 624</font></p>
-                  
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 ms-auto">
-                        <h5 class="mb-lg-4 mb-3"><font color="white">Redes Sociais</font></h5>
-
-                        <ul class="social-icon">
-                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
-                        <p class="copyright-text">Copyright © Clínica Saúde 2021 
-                        <br><br>Desenvolvido: <a href="http://www.radiomixa.ao" target="_parent"><font color="white">Rogério Lameira Alfredo</font></a></p>
-                    </div>
-
-                </div>
-            </section>
-        </footer>
-
-        <!-- JAVASCRIPT FILES -->
-        <script src="jsi/jquery.min.js"></script>
-        <script src="jsi/bootstrap.bundle.min.js"></script>
-        <script src="jsi/owl.carousel.min.js"></script>
-        <script src="jsi/scrollspy.min.js"></script>
-        <script src="jsi/custom.js"></script>
-<!--
-
-TemplateMo 566 Medic Care
-
-https://templatemo.com/tm-566-medic-care
-
--->
-    </body>
-    
 </html>

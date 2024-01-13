@@ -113,7 +113,7 @@ if (isset($_POST["submit"])) {
 
         
                     // Query
-                    $sql = "INSERT INTO contacto (userID, name, email, assunto, mensagem, telefone, contactType, file) VALUES ('{$id}', '{$nome}', '{$email}', '{$assunto}', '{$mensagem}', '{$telefone}','{$contactType}', '{$name}')";
+                    $sql = "INSERT INTO contacto (userID, name, email, assunto, mensagem, telefone, contactType, file,Direcao, Data) VALUES ('{$id}', '{$nome}', '{$email}', '{$assunto}', '{$mensagem}', '{$telefone}','{$contactType}', '{$name}','enviadoUser',now())";
                     
                     // Create mysql query
                     $sqlQuery = mysqli_query($connection, $sql);
@@ -125,8 +125,7 @@ if (isset($_POST["submit"])) {
                     // Send verification mensagem
                      if($sqlQuery) {
                        $msg = 'Clica no link de activação para verificares no teu e-mail. <br><br>
-                        <a href="http://localhost/gestaohospitalar/user_verificaiton.php?TipodePaciente='.$TipodePaciente.'"> Click here to verify mensagem</a>
-                     ';
+                        <a href="http://localhost/gestaohospitalar/user_verificaiton.php?TipodePaciente='.$TipodePaciente.'"> Click here to verify mensagem</a>';
 
                         // Create the Transport
                         $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))

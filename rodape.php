@@ -10,23 +10,19 @@
                     <div class="col-md-6">
                         <ul class="nav justify-content-md-end footer-menu">
                         <li class="nav-item">
-                                <a class="nav-link" href="./index.php">Inicio</a>
+                                <a class="nav-link" href="./index.php">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./actividades.php">area do paciente</a>
+                                <a class="nav-link" href="./recrutamento.php">Contacto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./about.php">Sobre nos</a>
+                                <a class="nav-link" href="">Sobre nós</a>
+                            </li>   
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Parceria</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./recrutamento.php">
-                                    Contacto
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.php">
-                                    Login
-                                </a>
+                                <a class="nav-link" href="login.php">Login</a>
                             </li>
                         </ul>
                     </div>

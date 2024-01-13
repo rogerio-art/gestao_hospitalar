@@ -21,8 +21,20 @@
           </div>
    
             <h3 class="text-center"> <font color="black">Formulário enviada com Sucesso! pelo que, daremos o devido tratamento</font> </h3><br>
-        <center> <a href="./pacient.php"  value="Salvar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary">Ir para página principal</a></center>
-     
+           <?php if(empty($_SESSION))
+           {
+?>
+ <center> <a href="./index.php"  value="Salvar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary">Voltar para página principal</a></center>
+     <?php
+           }
+           else
+{
+  ?>
+  <center> <a href="./actividades.php"  value="Salvar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary">Voltar para página principal</a></center>
+ <?php
+}
+           ?>
+
             </div>
           <!-- /. box -->
         </div>

@@ -1,6 +1,15 @@
-<?php include('headerlogout.php');?>
+<?php //include('headerlogout.php');?>
+<!doctype html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="favicon" href="assets/frontend/default/img/icons/favicon.ico">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Lameira| Soft</title>
+        <link rel="favicon" href="assets/frontend/default/img/icons/favicon.ico">
 <link rel="apple-touch-icon" href="assets/frontend/default/img/icons/icon.png">
 <link rel="stylesheet" href="assets/frontend/default/css/jquery.webui-popover.min.css">
 <link rel="stylesheet" href="assets/frontend/default/css/select2.min.css">
@@ -35,6 +44,43 @@
 <script src="assets/frontend/default/js/bootstrap-tagsinput.min.js"></script>
 <script src="assets/frontend/default/js/custom.js"></script>
 
+<!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    
+    <body id="top">
+
+  
+        <main>
+
+        <nav class="navbar navbar-expand-lg  fixed-top " STYLE ="color: white; background-color: #0d6efd;">
+                <div class="container">
+                    <a class="navbar-brand mx-auto d-lg-none" href="index.php">
+                        
+                        <strong class="d-block"><font color="white">Lameira Soft</font></strong>
+                    </a>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.php"><font color="white">Início</font></a>
+                            </li>
+
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php"><font color="white">Entrar</font></a>
+                            </li>
+
+                           
+								       </ul>
+                    </div>
+
+                </div>
+            </nav>
+    
 <section class="category-course-list-area">
     <div class="container">
         <div class="row justify-content-center">
@@ -42,7 +88,7 @@
               <div class="user-dashboard-box mt-3">
                   <div class="user-dashboard-content w-100 login-form">
                       <div class="content-title-box">
-                          <div class="title" >login</div>
+                          <div class="title" >Login Usuário</div>
                           <div class="subtitle">Confirme seus dados de usuario para inicar.</div>
                       </div>
                       <form action="scriptlogin.php" method="post">
@@ -96,4 +142,5 @@
     }
   }
 </script>
-
+</body>
+</html>

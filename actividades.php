@@ -1,14 +1,13 @@
 <?php
-//session_start();
+session_start();
 ?>
 <?php
-//   if(!isset($_SESSION["email"])) {
-//    header("Location: ./Validar_user_logado.php");
-   ?>
-   <?php
- //  }else 
- 
+ if(!isset($_SESSION['email']))
+ {// echo "string";exit();
+  header("location: ./Validar_user_logado.php");
+}
 ?>
+
 <?php include('config/db.php'); ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
