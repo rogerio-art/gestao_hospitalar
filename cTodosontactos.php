@@ -1,9 +1,9 @@
 <?php
-session_start();
+session_start();    
 
-if (empty($_SESSION['id'])) {
+if (empty($_SESSION['email'])) {
     header("location: ./Validar_user_logado.php");
-
+    exit();
 }
     ?>
 <?php
@@ -14,12 +14,7 @@ include('sidebar.php');
 $query = "SELECT * FROM contacto WHERE userID = '" . $_SESSION['id'] . "' ORDER BY id DESC ";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-
-
 ?>
-
-    
 
 <?
 function mysql_fetch_all($query)

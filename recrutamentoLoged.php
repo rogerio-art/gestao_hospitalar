@@ -1,4 +1,12 @@
 
+<?php
+session_start();    
+
+if (empty($_SESSION['email'])) {
+    header("location: ./Validar_user_logado.php");
+    exit();
+}
+    ?>
 <?php include('./controllers/ContactoCodeLoged.php'); ?>
 <?php include('header.php'); ?>
 <?php include('sidebar.php'); ?>
@@ -9,12 +17,6 @@
     <meta charset="utf-8">
 
 </head>
-<!-- The sidebar -->
-  <!-- Bootstrap 3.3.7 -->                                       
-  <!--link rel="stylesheet" href="CSS/bootstrap.min.css"-->
-  
-       
-             <!-- Page content -->
         <div class="content-wrapper">
         <section class="content-header">
       <h1>

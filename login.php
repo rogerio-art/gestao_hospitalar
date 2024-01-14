@@ -1,4 +1,4 @@
-<?php //include('headerlogout.php');?>
+<?php include('headerlogout.php');?>
 <!doctype html>
 <html lang="pt">
     <head>
@@ -50,37 +50,7 @@
   <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
     
-    <body id="top">
-
-  
-        <main>
-
-        <nav class="navbar navbar-expand-lg  fixed-top " STYLE ="color: white; background-color: #0d6efd;">
-                <div class="container">
-                    <a class="navbar-brand mx-auto d-lg-none" href="index.php">
-                        
-                        <strong class="d-block"><font color="white">Lameira Soft</font></strong>
-                    </a>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav mx-auto">
-                            
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.php"><font color="white">Início</font></a>
-                            </li>
-
-                           
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.php"><font color="white">Entrar</font></a>
-                            </li>
-
-                           
-								       </ul>
-                    </div>
-
-                </div>
-            </nav>
-    
+    <body id="top">        
 <section class="category-course-list-area">
     <div class="container">
         <div class="row justify-content-center">

@@ -19,32 +19,30 @@
       
       <!-- logo for regular state and mobile devices -->
     </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-expand-lg "STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 20px; background-color: #0d6efd;">
-  <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+    <nav class="navbar navbar-expand-lg  fixed-top " STYLE ="color: white; background-color: #0d6efd;">
+                <div class="container">
+                    <a class="navbar-brand mx-auto d-lg-none" href="index.php">
+                        
+                        <strong class="d-block"><font color="white">Lameira Soft</font></strong>
+                    </a>
 
-      <div class="navbar-custom-menu">
-  
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.php"><font color="white">Início</font></a>
+                            </li>
 
-              <ul class="nav navbar-nav"><?php  if(isset($_SESSION['email'])){
-                           ?>
-                          <li > <a href="dashboard.php"><font color ="white">Olá: <?php echo  ($_SESSION ['name']); ?></font></a></li>
-                          <li > <a href="logout.php"><font color ="white">Sair</font></a></li>
-                         
-                         <?php
-                           }else{
-                            ?>
-                            <li class="nav-item"> <a class="nav-link" href="login.php"></span><font color ="white">Clínica</font></a></li>
-                            <li class="nav-item"> <a class="nav-link" href="signup.php"></span><font color ="white">Saúde</font></a></li>
-                           <?php
-                           }
-                           ?> </ul>
                            
-             
-      </div>
-    </nav>
-  </header>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php"><font color="white">Entrar</font></a>
+                            </li>
+
+                           
+								       </ul>
+                    </div>
+
+                </div>
+            </nav>
+          </header>
  

@@ -51,6 +51,7 @@
     </head>
     
     <body id="top">
+   
 <section class="category-course-list-area">
     <div class="container">
         <div class="row justify-content-center">

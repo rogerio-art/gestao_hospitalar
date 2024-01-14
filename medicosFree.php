@@ -1,10 +1,11 @@
 <?php
-session_start();
+session_start();    
 
-if (empty($_SESSION['id'])) {
+if (empty($_SESSION['email'])) {
     header("location: ./Validar_user_logado.php");
-
+    exit();
 }
+    ?>
     ?>
 <!doctype html>
         <html lang="en">

@@ -31,7 +31,7 @@ if (isset($_POST['loginuser'])) {
                 $_SESSION['imageupload'] = $imageupload;
 
                 header("Location: ./actividades.php");
-                exit();
+         
             } else {
                 echo "<script>alert('Por favor, entre com seu e-mail e senha corretos.');</script>";
                 header("refresh:0;url=login.php");
