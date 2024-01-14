@@ -1,12 +1,12 @@
 <?php
 session_start();
-?>
-<?php
- if(!isset($_SESSION['email']))
- {// echo "string";exit();
-  header("location: ./Validar_user_logado.php");
+
+if (empty($_SESSION['id'])) {
+    header("location: ./Validar_user_logado.php");
+
 }
-?>
+    ?>
+
 
 <?php include('config/db.php'); ?>
 <?php include('header.php');?>
