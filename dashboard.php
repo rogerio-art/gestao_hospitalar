@@ -1,5 +1,12 @@
+<?php
+  session_start();    
 
-<?php include('config/db.php'); ?>
+  if (empty($_SESSION['email'])) {
+      header("location: ./Validar_user_logado.php");
+      exit();
+  }
+?>
+
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 
@@ -10,10 +17,6 @@
     <script src="JS/bootstrap.bundle.min.js"></script>
     
     <script src="JS/app.js"></script>
-       
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -39,9 +42,7 @@ $row=mysqli_fetch_array($write)or die (mysqli_error($connection));
    //echo "$firstname"; exit();
 ?>
 <?php
-//include("../inc/connect.php") ;
 
-//session_start();
 if(isset($_POST['submit']))
 { //print_r($_POST); exit;
   if ($_FILES["profileimg"]["name"]!='')
@@ -78,13 +79,13 @@ if(isset($_POST['submit']))
 //  $password=$_POST['password']; 
   $fname=$_POST   ['fname'   ];
   $username=$_POST['username'];
-  $password=md5($_POST['password']);
+  $passwordP=md5(md5(mysqli_real_escape_string($connection, $_POST['password'])));
   $phone=$_POST['phone'];
   $cartaodesaude=$_POST['cartaodesaude'];
 
  // $password1=md5("$password");
-$Confirmpassword=md5($_POST['Confirmpassword']);
-$write =mysqli_query($connection,"UPDATE patientregister SET name='$fname', imageupload='$name', phone='$phone',email='$username',password='$password' WHERE id='".$_SESSION['id']."'")or die(mysqli_error($connection));
+$Confirmpassword=md5(md5(mysqli_real_escape_string($connection, $_POST['Confirmpassword'])));
+$write =mysqli_query($connection,"UPDATE patientregister SET name='$fname', imageupload='$name', phone='$phone',email='$username',password='$passwordP', cartaodesaude='$cartaodesaude' WHERE id='".$_SESSION['id']."'")or die(mysqli_error($connection));
       $_SESSION['name']=$fname;
       echo " <script>alert('Dados atualizados com sucesso..');</script>";
        
@@ -145,20 +146,20 @@ $write =mysqli_query($connection,"UPDATE patientregister SET name='$fname', imag
           </div><br>
           <div class="form-group">
           <label for="exampleInputEmail1">Nº de Cartão de Saúde</label>
-          <input type="email" class="form-control" name="username" value="<?php echo $cartaodesaude;?>">
+          <input type="text" class="form-control" name="cartaodesaude" value="<?php echo $cartaodesaude;?>">
           </div><br>
           <div class="form-group">
-          <label for="exampleInputPassword1">Senha</label>
+          <label for="exampleInputPassword1">Nova Senha</label>
           <input type="hidden" name="pswd" class="form-control" value="<?php echo $password;?>" >
-          <input type="text" name="password" value="<?php echo $password;?>" class="form-control" >
+          <input type="text" name="password" value="" class="form-control" >
           </div>
           <div class="form-group">
           <label for="exampleInputPassword1"> Confirmar senha</label>
-          <input type="password" name="Confirmpassword" value="<?php echo $password;?>" class="form-control">
+          <input type="password" name="Confirmpassword" value="<?php $Confirmpassword ?>" class="form-control">
           </div><br>
             
           <div class="col text-end">
-                         <button type="submit" name="submit" class="btn btn-primary"><i class="fa fa-back"></i>Atualizar</button> </span><!--&nbsp;&nbsp;-->
+                         <button type="submit" name="submit" class="btn btn-primary bg-blue"><i class="fa fa-back"></i>Atualizar</button> </span><!--&nbsp;&nbsp;-->
                          <a href="logout.php"><span class="btn btn-primary bg-blue"><i class="fa fa-back"></i>Sair</span><!--&nbsp;&nbsp;-->
          
                    
@@ -167,15 +168,14 @@ $write =mysqli_query($connection,"UPDATE patientregister SET name='$fname', imag
         </section>
    </div>
   </div>
-  </div>
-  </div>
+  
 </section>
 
 </body>
 
-</html>
 
 <?php include('footer.php');?>
+</html>
 
 
 

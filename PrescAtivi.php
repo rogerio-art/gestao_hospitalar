@@ -1,6 +1,11 @@
+<?php
+  session_start();    
 
-<?php include('config/db.php'); ?>
-
+  if (empty($_SESSION['email'])) {
+      header("location: ./Validar_user_logado.php");
+      exit();
+  }
+      ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 

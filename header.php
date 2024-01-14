@@ -1,5 +1,4 @@
-<?php include"./inc/connect.php";
- ?>
+<?php include("inc/connect.php");?>
  <!DOCTYPE html>
 <html>
 <head>
@@ -111,7 +110,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.php" class="logo">
+    <a href="actividades.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       
       <!-- logo for regular state and mobile devices -->

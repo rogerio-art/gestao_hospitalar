@@ -5,7 +5,7 @@ if (empty($_SESSION['email'])) {
     header("location: ./Validar_user_logado.php");
     exit();
 }
-    ?>
+    
     ?>
 <!doctype html>
         <html lang="en">

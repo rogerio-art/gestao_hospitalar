@@ -1,12 +1,17 @@
+<?php
+  session_start();    
 
-<?php include"./header.php";?>
-<?php include"./sidebar.php";?>
-<?php include"./config/db.php" ;?>
-
+  if (empty($_SESSION['email'])) {
+      header("location: ./Validar_user_logado.php");
+      exit();
+  }
+      ?>
+<?php include"header.php";?>
+<?php include"sidebar.php";?>
 
 <?php
-
-$query=mysqli_query($connection,"SELECT * FROM justify WHERE id_patient='".$_SESSION['id']."'")or die (mysqli_error($connection));
+$query="SELECT * FROM justify  WHERE  id_patient='".$_SESSION['id']."'";
+$query=mysqli_query($connection,$query)or die (mysqli_error($connection));
 $numrows=mysqli_num_rows($query)or die (mysqli_error($connection));
 $row1=mysql_fetch_all($query);
 

@@ -1,7 +1,7 @@
+<?php
 
-
-<!-- Left side column. contains the logo and sidebar -->
-
+   // include('config/db.php');
+    ?>
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -38,7 +38,7 @@ $sql="SELECT * FROM patientregister";
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"> <a class="nav-link"  href="./index.php"><i class="fa fa-home"></i> Painel Principal</a></li>
+        <li class="header"> <a class="nav-link"  href="./actividades.php"><i class="fa fa-home"></i> Painel Principal</a></li>
      
         <li>
           

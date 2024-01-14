@@ -1,3 +1,11 @@
+<?php
+session_start();    
+
+if (empty($_SESSION['id'])) {
+    header("location: ../Validar_user_logado.php");
+    
+}
+    ?>
 <!doctype html>
         <html lang="en">
           <title>Ver Justificativo</title>

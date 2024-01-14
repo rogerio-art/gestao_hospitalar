@@ -1,17 +1,13 @@
-
-<?php include('config/db.php'); ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 
         <!doctype html>
-        <html lang="en">
+        <html lang="pt-br">
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Bootstrap 3.3.7 -->                                       
      <link rel="stylesheet" type="text/css"  href="print.css" media="print">
         </head>
-        <!-- Page contentfaz a pagina se ajustar dentro do header e do sidbar-->
         <?php
         $s="SELECT * FROM addappointment  WHERE  patient='".$_SESSION['id']."'";
 $query=mysqli_query($connection,$s)or die (mysqli_error($connection));
@@ -22,11 +18,8 @@ function mysql_fetch_all($query) {
     while ($all[] = mysqli_fetch_assoc($query)) {$temp=$all;}
     return $temp;
 }
-//echo 'xdgfdxg'.count($numrows); exit;
-//print_r($row1); exit;
-//$row1[]=mysql_fetch_assoc($query)or die (mysql_error());
+
 ?>
-    <!-- Content Header (Page header) -->
         <br><br>
 <div class="content-wrapper">
 <section class="content-header">
@@ -52,9 +45,6 @@ Minhas Consultas
 
         &nbsp;&nbsp;&nbsp;&nbsp;  <a href="./marcarconsulta.php"><button type="submit"   name="submit" class="btn btn-primary bg-blue"><i class="fa fa-plus-square"></i>&nbsp; Agendar Consulta</button></a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<!--    <td>
-<button type="button" class="btn btn-default">Copy</button>
-</td> -->
 
 <div class="box-body">
               <table id="example1" class="table table-bordered table-striped table-hover">
@@ -68,7 +58,6 @@ Minhas Consultas
                   <th>Hora</th>
                   <th>Estado</th>
                   <th>Opção</th>
-                 
                 </tr>
                 </thead>
                 <tbody>
@@ -104,6 +93,12 @@ Minhas Consultas
     ?>  
      <td>
    <label type="" class=""><i class=""></i><font color="black"> Pendente </font></label>    
+   </td>
+   <td> 
+ <a href="
+   updatestatos.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-primary bg-red"><i class=""></i>Cancelar</button>
+  
+   </a>
    </td>
   <?php
   }
@@ -173,12 +168,7 @@ Minhas Consultas
 
 else  {
   ?>
-  <td> 
- <a href="
-   updatestatos.php?id=<?php echo $row["id"]; ?>"> 
-  <button type="button" class="btn btn-primary bg-red"><i class=""></i>Cancelar</button>
-   </a>
-   </td>
+
   <?php
 }
 

@@ -1,5 +1,11 @@
+<?php
+session_start();    
 
-<?php include('./controllers/ContactoCodeLoged.php'); ?>
+if (empty($_SESSION['id'])) {
+    header("location: ../Validar_user_logado.php");
+    
+}
+    ?>
 <?php include('header.php'); ?>
 <?php include('sidebar.php'); ?>
 <?php 
@@ -54,7 +60,7 @@ $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
    <section class="content">
      <div class="box box-primary">
        <div class="box-header with-border">
-   <form method="POST" enctype="multipart/form-data" class="row g-3">
+   <form action="./controllers/ContactoCodeLoged.php" method="POST" enctype="multipart/form-data" class="row g-3">
    <div class="col-md-6">
                         <label>Nome Completo</label>
                         <input type="text" placeholder="" class="form-control" name="nome" id="nome" value="<?php echo $row['name'];?>"  required="required" />

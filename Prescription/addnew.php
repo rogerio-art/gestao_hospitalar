@@ -37,7 +37,7 @@ if(isset($_POST['submit']))
     $write =mysqli_query($connection,"INSERT INTO addnewpres(`id_patient`,`patient`,`date`,`history`,`medication`,`note`,`peso`) VALUES ('$patient','$namepatient',now(),'$history','$medication','$note','$peso')") or die(mysqli_error($connection));
     //$query=mysql_query("SELECT * FROM user ")or die (mysql_error());
       //$numrows=mysql_num_rows($query)or die (mysql_error());
-       echo " <script>setTimeout(\"location.href='../prescription/prescription.php';\",150);</script>";
+       echo " <script>setTimeout(\"location.href='./prescription.php';\",150);</script>";
 }
   
 

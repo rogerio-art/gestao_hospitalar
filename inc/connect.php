@@ -5,7 +5,7 @@
 
     // Set sessions
     if(!isset($_SESSION)) {
-     session_start();
+   
     }
 
     $hostname = "localhost";

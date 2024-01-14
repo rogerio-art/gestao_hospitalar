@@ -1,18 +1,18 @@
-
 <?php
 session_start();    
 
 if (empty($_SESSION['email'])) {
     header("location: ./Validar_user_logado.php");
-    exit();
+    
 }
     ?>
-<?php include('./controllers/ContactoCodeLoged.php'); ?>
-<?php include('header.php'); ?>
-<?php include('sidebar.php'); ?>
+<?php include('./header.php');?>
+<?php include('./sidebar.php');?>
+
+
 
         <!doctype html>
-        <html lang="en">
+        <html lang="pt-br">
         <head>
     <meta charset="utf-8">
 
@@ -31,7 +31,7 @@ if (empty($_SESSION['email'])) {
    <section class="content">
      <div class="box box-primary">
        <div class="box-header with-border">
-   <form method="POST" enctype="multipart/form-data" class="row g-3">
+   <form action="./controllers/ContactoCodeLoged.php" method="POST" enctype="multipart/form-data" class="row g-3">
    <div class="col-md-6">
                         <label>Nome Completo</label>
                         <input type="text" placeholder="" class="form-control" name="nome" id="nome" value="<?php echo $_SESSION["name"]?>"  required="required" />

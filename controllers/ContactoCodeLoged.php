@@ -1,3 +1,7 @@
+<?php
+    include('../config/db.php');
+   
+    ?>
 
 <?php
 if (isset($_POST["submit"])) {
@@ -26,7 +30,7 @@ if (isset($_POST["submit"])) {
 
         // Move the uploaded file if there are no errors
         if ($error === UPLOAD_ERR_OK) {
-            move_uploaded_file($temp, "./Upload/File/" . $name);
+            move_uploaded_file($temp, "../Upload/File/" . $name);
             //echo "Upload Complete";
         } else {
             echo "Error uploading file. Please try again.";
@@ -63,15 +67,15 @@ if (isset($_POST["submit"])) {
 
         
                     // Query
-                    $sql = "INSERT INTO contacto (userID, name, email, assunto, mensagem, telefone, contactType, file,Direcao, Data) VALUES ('{$id}', '{$nome}', '{$email}', '{$assunto}', '{$mensagem}', '{$telefone}','{$contactType}', '{$name}','enviadoUser',now())";
-                    
+                    $sql = "INSERT INTO contacto (userID, name, email, assunto, mensagem, telefone, contactType, file, Direcao, Data) VALUES ('{$id}', '{$nome}', '{$email}', '{$assunto}', '{$mensagem}', '{$telefone}','{$contactType}', '{$name}','enviadoUser',now())";
+        
                     // Create mysql query
                     $sqlQuery = mysqli_query($connection, $sql);
                 }
                     if(!$sqlQuery){
                         die("MySQL query failed!" . mysqli_error($connection));
                     } 
-                    header("Location: ./contacto_sucessoLoged.php");
+                    header("Location: ../contacto_sucessoLoged.php");
                     // Send verification mensagem
                      if($sqlQuery) {
                        $msg = 'Clica no link de activação para verificares no teu e-mail. <br><br>

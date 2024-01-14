@@ -1,4 +1,11 @@
+<?php
+session_start();    
 
+if (empty($_SESSION['id'])) {
+    header("location: ../Validar_user_logado.php");
+    
+}
+    ?>
 <?php include('../controllers/ContactoCodeAdmin.php'); ?>
 <?php include"../Include/header.php";?>
 <?php include"../Include/sidebar.php";?>  

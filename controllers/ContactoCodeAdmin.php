@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
 
         // Move the uploaded file if there are no errors
         if ($error === UPLOAD_ERR_OK) {
-            move_uploaded_file($temp, "./Upload/File/" . $name);
+            move_uploaded_file($temp, "../Upload/File/" . $name);
             //echo "Upload Complete";
         } else {
             echo "Error uploading file. Please try again.";

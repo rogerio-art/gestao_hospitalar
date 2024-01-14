@@ -14,22 +14,14 @@ include('sidebar.php');
 $query = "SELECT * FROM contacto WHERE userID = '" . $_SESSION['id'] . "' ORDER BY id DESC ";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
-?>
 
-<?
 function mysql_fetch_all($query)
-
 {
 $all = array();
 while ($all[] = mysqli_fetch_assoc($query)) {$temp=$all;}
 return $temp;
 }
-//print_r($row1); 
-//print_r($p_row1);exit;
-//$row1[]=mysql_fetch_assoc($query)or die (mysqli_error());
 ?>
-
-
 
 <div class="content-wrapper">
   <section class="content-header">
