@@ -52,7 +52,7 @@ Meus contactos enviado
 <div class="col-xs-12">
 <div class="box box-primary">
 <div class="box-header with-border">
-<i class="fa fa-user"></i> <h3 class="box-title"> Página de contacto</h3>
+<i class="fa fa-user"></i> <h3 class="box-title"> Nome :  <?php echo ($_SESSION ['name'] ); ?></h3>
 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -64,10 +64,10 @@ Meus contactos enviado
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-            <th>Nome</th>
-            <th>Email</th>
+            <!--th>Nome</th-->
+            <!--th>Email</th-->
             <th>Assunto</th>
-            <th>Documento</th>
+            <th>Anexo</th>
             <th>Opções</th>
             </tr>
             </thead>
@@ -81,8 +81,8 @@ $w1 =mysqli_query($connection," SELECT name FROM patientregister WHERE id='".$ro
 $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
  //print_r($row2); exit();
 ?> <tr>  
-<td><?php echo $row['name'];?></td>
-<td><?php echo $row['email'];?></td>
+<!--td><?php// echo $row['name'];?></td-->
+<!--td><?php// echo $row['email'];?></td-->
 <td><?php echo $row['assunto'];?></td> 
 
 <!--td><img src="./Upload/File/<?php echo $row['file'];?>" style="height:100px;width:100px;" alt="<?php echo pathinfo($row['file'], PATHINFO_FILENAME) ?>"/></td-->
@@ -117,26 +117,26 @@ $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
 
 <td>
   <a href="ver_contactoUser.php?id=<?php echo $row['id']; ?>" class="btn bg-blue">
-    <i class="fa fa-eye"></i> Ver
+    <i class="fa fa-eye"></i>
   </a>&nbsp;&nbsp;
 
   <a href="./Admin/donwload.php?file=<?php echo $row['file']; ?>" class="btn bg-blue">
-    <i class="fa fa-download"></i> Download
+    <i class="fa fa-download"></i>
   </a>&nbsp;
 
   <?php
   // Check if there is an image to display
   if (!empty($row['file']) && file_exists($filePath)) {
   ?>
-    <a href="./Upload/File/<?php echo $row['file']; ?>" target="_blank" class="btn btn-primary">
-      <i class="fa fa-eye"></i> Visualizar
+    <a href="./Upload/File/<?php echo $row['file']; ?>" target="_blank" class="btn bg-blue">
+      <i class="fa fa-eye"></i> 
     </a>
   <?php
   } else {
     // Display a disabled button if there is no image
     ?>
     <button class="btn btn-primary" disabled>
-      <i class="fa fa-eye"></i> Visualizar
+      <i class="fa fa-eye"></i> 
     </button>
     <?php
   }

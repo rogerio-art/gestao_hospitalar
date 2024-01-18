@@ -7,44 +7,36 @@
 ?>
 <script src="../dist/dist/jquery.min.js"></script>
 
-<script>	
- function getdoctor(val) {
-	$.ajax({
-	type: "POST",
-	url: "../get_doctor.php",
-	data:'specilizationid='+val,
-	success: function(data){
-		$("#doctor").html(data);
-  
-	}
-	});
-}
-</script>	
-
-
-   <script>
-function getfee(val) {
-	$.ajax({
-	type: "POST",
-	url: "../get_doctor.php",
-	data:'Price='+val,
-	success: function(data){
-		$("#Preco").html(data);
-	}
-	});
-}
-</script>	
-
 <script>
+function getdoctor(val) {
+    $.ajax({
+        type: "POST",
+        url: "../get_doctor.php",
+        data: 'specilizationid=' + val,
+        success: function(data) {
+            $("#doctor").html(data);
+        }
+    });
+}
 
-$ (function (){
-$ ("#patient") .change(function(){
-    var mostrarnome=$("#patient option:selected").text();
-    $ ("#namepatient") .val (mostrarnome);
-   })
-})
-</script> 
+function getfee(val) {
+    $.ajax({
+        type: "POST",
+        url: "../get_doctor.php", // Corrigi o nome do arquivo PHP para receber a solicitação de preço
+        data: 'Price=' + val,
+        success: function(data) {
+            $("#Preco").html(data);
+        }
+    });
+}
 
+$(function() {
+    $("#patient").change(function() {
+        var mostrarnome = $("#patient option:selected").text();
+        $("#namepatient").val(mostrarnome);
+    });
+});
+</script>
 <?php
 
 $p_query=mysqli_query($connection,"SELECT * FROM patientregister")or die (mysqli_error($connection));
@@ -88,7 +80,7 @@ function mysql_fetch_all($query) {
                 <div class="form-group">
                 <label for="exampleInputEmail1">Paciente</label><br>
                  <select name="patient" id="patient" class="form-control select2"  placeholder=""  required="required">
-                 <option>
+                 
 <?php
 
 $p_query="SELECT * FROM beneficiario ";

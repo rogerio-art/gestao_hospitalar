@@ -48,33 +48,33 @@ if (empty($_SESSION['email'])) {
         
       
              <!-- Page content -->
-<script>	
- function getdoctor(val) {
+             <script>
+function getdoctor(val) {
 	$.ajax({
-	type: "POST",
-	url: "get_doctor.php",
-	data:'specilizationid='+val,
-	success: function(data){
-		$("#doctor").html(data);
-  
-	}
+		type: "POST",
+		url: "get_doctor.php",
+		data: 'specilizationid=' + val,
+		success: function(data) {
+			$("#doctor").html(data);
+
+			// Após carregar os médicos, chama a função para carregar os preços
+			getfee($("#Nome").val());
+		}
 	});
 }
-</script>	
 
-
-   <script>
 function getfee(val) {
 	$.ajax({
-	type: "POST",
-	url: "get_doctor.php",
-	data:'Price='+val,
-	success: function(data){
-		$("#Preco").html(data);
-	}
+		type: "POST",
+		url: "get_doctor.php",
+		data: 'Price=' + val,
+		success: function(data) {
+			$("#Preco").html(data);
+		}
 	});
 }
-</script>	 
+</script>
+
 
 <!-- <script src="./dist/dist/jquery.min.js"></script>
 
@@ -119,12 +119,6 @@ while ($row1 =mysqli_fetch_array($res)) {
   <input type="hidden" class="form-control" name="emaildocliente" id="emailpaciente" value="<?php echo ($_SESSION ['email'] ); ?>"/>
   </div>
  
-  <div class="col-md-6">
-  <label>Data</label>
-  <input class="form-control datepicker" name="dataconsulta"  required="required" value="<?php echo date('Y-m-d');  ?>"  data-date-format="yyyy-mm-dd">
-  </div>
-  
-
   <div class="form-group">
   <div class="col-md-6">
   <label for="DoctorSpecialization">
@@ -147,13 +141,6 @@ while($row=mysqli_fetch_array($ret))
             </div>
             </div>
 
-  <div class="col-md-6">
-  <label>Telefone</label>
-  <input type="text" class="form-control" name="numerodetelefone" id="numerodetelefone" value="<?php echo ($_SESSION ['phone'] ); ?>"/>
-  </div>
- 
-
-
             <div class="form-group">
             <div class="col-md-6">
 															<label >
@@ -163,15 +150,7 @@ while($row=mysqli_fetch_array($ret))
 						<option value="">Selecione o Médico</option>
 						</select>
 														</div>
-                            </div>
-
-
-            <div class="form-group">
-            <div class="col-md-6">
-  <label >Hora</label>
-  <input type="time" class="form-control" name="Hora" id="timepickellllr1"   required="required">
-            </div>
-            </br></br>
+                          
   <div class="form-group">
             <div class="col-md-6">
 															<label >
@@ -181,14 +160,37 @@ while($row=mysqli_fetch_array($ret))
 						<option value="">Selecione o Preço</option>
 						</select>
 														</div>
+                          </div>
+
+
+                          <div class="col-md-6">
+  <label>Data</label>
+  <input class="form-control datepicker" name="dataconsulta"  required="required" value="<?php echo date('Y-m-d');  ?>"  data-date-format="yyyy-mm-dd">
+  </div>
+  
+            <div class="form-group">
+            <div class="col-md-6">
+  <label >Hora</label>
+  <input type="time" class="form-control" name="Hora" id="timepickellllr1"   required="required">
+            </div>
+            
                             </div>
+                            <div class="col-md-6">
+  <label>Telefone</label>
+  <input type="text" class="form-control" name="numerodetelefone" id="numerodetelefone" value="<?php echo ($_SESSION ['phone'] ); ?>"/>
+  </div>
+  <div class="col-md-6">
+  <label>E-mail</label>
+  <input type="text" class="form-control" name="email" id="numerodetelefone" value="<?php echo ($_SESSION ['email'] ); ?>"/>
+  </div>
+ 
                                                       
   <div class="col-md-6">
    <input type="hidden" class="form-control" readonly="readonly"  name="id" id="id" value="<?php echo ($_SESSION ['id'] ); ?>"/>
   </div>
 
   <div class="col-md-12">
-</br>
+  </br> 
   <input  type="submit" name="submit" id="submit" value="Salvar" STYLE = "color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #2196f3;" size = "10" maxlength = "30" class="form-control" class="btn btn-primary"  />
    
                
@@ -198,7 +200,7 @@ while($row=mysqli_fetch_array($ret))
     </div>
   
 </form>
-</br>
+
 
                
 </div>

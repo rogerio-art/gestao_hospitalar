@@ -39,7 +39,7 @@ Minhas Consultas
 <div class="col-md-12">
 <div class="box box-primary">
 <div class="box-header with-border">
-<i class="fa fa-user"></i> <h3 class="box-title">Consultas Activas</h3>
+<i class="fa fa-user"></i> <h3 class="box-title">Nome :  <?php echo ($_SESSION ['name'] ); ?></h3>
 
 </br></br>
 
@@ -51,11 +51,11 @@ Minhas Consultas
                 <thead>
                 <tr>
                   <!-- <th>id</th> -->
-                  <th>Paciente</th>
+                  <!--th>Paciente</th-->
                   <th>Nom da Consulta</th>
-                  <th>Médico</th>
+                  <!--th>Médico</th-->
                   <th>Data</th>
-                  <th>Hora</th>
+                  <!--th>Hora</th-->
                   <th>Estado</th>
                   <th>Opção</th>
                 </tr>
@@ -73,11 +73,11 @@ Minhas Consultas
       
       ?> <tr>
       <!-- <td><?php // echo $row['id'];?></td> -->
-      <td><?php echo $row['namepatient'];?></td>
+      <!--td><?php// echo $row['namepatient'];?></td-->
         <td><?php echo $row['especialidade'];?></td>
-        <td><?php echo $row['doctor'];?></td>
+        <!--td><?php// echo $row['doctor'];?></td-->
       <td><?php echo $row['app_date'];   ?></td>
-      <td><?php echo $row['hora'];   ?></td>
+      <!--td><?php //echo $row['hora'];   ?></td-->
 
       <?php
  if ($date_now= date("Y-m-d") > $row['app_date'] && $row['estado']=='1'  ){

@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
+|Rogerio Alfredo
 | -------------------------------------------------------------------
 | DATABASE CONNECTIVITY SETTINGS
 | -------------------------------------------------------------------
@@ -76,9 +77,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'lameira1_root',
-	'password' => 'Rosaandre2017',
-	'database' => 'lameira1_gestao_hospitalr',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'gestao_hospitalr',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

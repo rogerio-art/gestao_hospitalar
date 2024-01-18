@@ -72,9 +72,9 @@ Meus contactos enviado
             <thead>
             <tr>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Assunto</th>
-            <th>Documento</th>
+            <!--th>Email</th>
+            <th>Assunto</th-->
+            <th>Anexo</th>
             <th>Opções</th>
             </tr>
             </thead>
@@ -89,8 +89,8 @@ $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
  //print_r($row2); exit();
 ?> <tr>  
 <td><?php echo $row['name'];?></td>
-<td><?php echo $row['email'];?></td>
-<td><?php echo $row['assunto'];?></td> 
+<!--td><?php //echo $row['email'];?></td>
+<td><?php //echo $row['assunto'];?></td--> 
 
 <!--td><img src="./Upload/File/<?php echo $row['file'];?>" style="height:100px;width:100px;" alt="<?php echo pathinfo($row['file'], PATHINFO_FILENAME) ?>"/></td-->
 
