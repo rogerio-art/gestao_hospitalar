@@ -1,6 +1,8 @@
-
-
 <?php
+try {
+    
+
+
    include('config/db.php');
 
     $name= mysqli_real_escape_string($connection,$_POST['name']);
@@ -59,10 +61,22 @@
        $_SESSION['phone'] = $phone;
     
        ?>
+
         <?php
           $user_registration_query="INSERT INTO users (first_name, last_name, email, password, social_links, biography,role_id,date_added,last_modified,watch_history,wishlist,title,	paypal_keys,stripe_keys,verification_code,	status)
           VALUES ('{$name}','.','{$email}', '$senhaChat', '$address', '{$phone}', '2',now(),now(),'.png','[]','sem titulo','{$token}','{$stripkay}','{$verification}','{$statos}')";
           $user_registration_result=mysqli_query($connection,$user_registration_query) or die(mysqli_error($connection));
     }
+    header("refresh:1;url=actividades.php");
+
+
+        
+
+} catch (Exception $e) {
+    // Captura da exceção e tratamento
+    echo "Exceção capturada: " . $e->getMessage();
+} finally {
+    
+}
+
 ?>
-       <meta http-equiv="refresh" content="1;url=actividades.php" />

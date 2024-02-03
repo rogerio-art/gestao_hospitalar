@@ -69,7 +69,7 @@ $w1 =mysqli_query($connection," SELECT name FROM patientregister WHERE id='".$ro
 $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
  //print_r($row2); exit();
 ?> <tr>  
-<!--td><?php echo// $row['name'];?></td-->
+<!--td><?php //echo $row['name'];?></td-->
 <!--td><?php// echo $row['email'];?></td-->
 <td><?php echo $row['assunto'];?></td> 
 

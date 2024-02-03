@@ -1,23 +1,23 @@
 <?php include("inc/connect.php");?>
 
 <?php
-// Inicia a sessão
+// // Inicia a sessão
 
 
-// Define o tempo de expiração em segundos (por exemplo, 30 minutos)
-$expira_em_segundos = 1800; // 30 minutos * 60 segundos por minuto
+// // Define o tempo de expiração em segundos (por exemplo, 30 minutos)
+// $expira_em_segundos = 1800; // 30 minutos * 60 segundos por minuto
 
-// Verifica se a sessão existe e está ativa
-if (isset($_SESSION['email']) && (time() - $_SESSION['last_activity']) < $expira_em_segundos) {
-    // Atualiza o último momento de atividade da sessão
-    $_SESSION['last_activity'] = time();
-    // Restante do seu código para a sessão ativa
-} else {
-    // Sessão expirada ou inexistente, redirecione para a página de login
-    header("Location: login.php");
-    exit();
-}
-?>
+// // Verifica se a sessão existe e está ativa
+// if (isset($_SESSION['email']) && (time() - $_SESSION['last_activity']) < $expira_em_segundos) {
+//     // Atualiza o último momento de atividade da sessão
+//     $_SESSION['last_activity'] = time();
+//     // Restante do seu código para a sessão ativa
+// } else {
+//     // Sessão expirada ou inexistente, redirecione para a página de login
+//     header("Location: login.php");
+//     exit();
+// }
+// ?>
 
  <!DOCTYPE html>
 <html>

@@ -81,7 +81,7 @@
                             </div>
                           <div class="forgot-pass text-center">
                               <span></span>
-                              <a href="changepassword.php">Esqueceu sua senha?</a>
+                              <a href="#">Esqueceu sua senha?</a>
                           </div>
                           <div class="account-have text-center">
                               ainda não tem uma conta? <a href="./signup.php">Regista se Agora</a>

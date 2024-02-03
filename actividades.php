@@ -1,11 +1,11 @@
-  <?php   
+<?php
+session_start();    
 
-  if (empty($_SESSION['email'])) {
-      header("location: ./Validar_user_logado.php");
-  
-  }
-      ?>
-
+if (empty($_SESSION['email'])) {
+    header("location: ./Validar_user_logado.php");
+    exit();
+}
+    ?>
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 

@@ -20,7 +20,6 @@ function mysql_fetch_all($query) {
 }
 
 ?>
-        <br><br>
 <div class="content-wrapper">
 <section class="content-header">
 <h1>
