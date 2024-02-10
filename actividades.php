@@ -300,9 +300,41 @@ if (empty($_SESSION['email'])) {
             
            </div>
         </div>
-        <!-- ./col -->
-       
-   
+      <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+                   <?php 
+                             $sql="SELECT count(*) FROM  exameeletronico WHERE iduser='".$_SESSION['id']."'";
+                  
+    $write =mysqli_query($connection,$sql) or die(mysqli_error($connection));
+     $row=mysqli_fetch_array($write)or die (mysqli_error($connection));
+   //print_r($row); exit;
+                ?>
+              <h3><?php echo $row[0];?></h3>
+
+              <p> Exame </p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-plus-square"></i>
+            </div>
+            <?php  if($row[0]<1){
+                           ?>
+                           <a href="#" class="small-box-footer"> Sem Exames para mostrar <i class="fa fa-arrow-circle-right"></i></a>
+                         
+                         <?php
+                           }else{
+                            ?>
+                          <a href="./verexameElletronico.php" class="small-box-footer">Clica pra ver <i class="fa fa-arrow-circle-right"></i></a>
+         
+                           <?php
+                           }
+                           ?>
+
+            
+           </div>
+        </div>
+      
             <!-- /.box-body -->
           </div>
           <!-- /. box -->

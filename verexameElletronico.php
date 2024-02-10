@@ -11,7 +11,7 @@ include('config/db.php');
 include('header.php');
 include('sidebar.php');
 
-$query = "SELECT * FROM contacto WHERE userID = '" . $_SESSION['id'] . "' ORDER BY id DESC ";
+$query = "SELECT * FROM exameeletronico WHERE iduser = '" . $_SESSION['id'] . "' ORDER BY id DESC ";
 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 $row1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -42,7 +42,7 @@ Meus contactos enviado
 <i class="fa fa-user"></i> <h3 class="box-title"> Nome :  <?php echo ($_SESSION ['name'] ); ?></h3>
 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
- &nbsp;&nbsp;&nbsp;&nbsp;  <a href="./recrutamentoLoged.php"><button type="submit"   name="submit" class="btn btn-primary bg-blue"><i class="fa fa-plus-square"></i>&nbsp; Enviar Contacto</button></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;  <a href="./verexameElletronico.php"><button type="submit"   name="submit" class="btn btn-primary bg-blue"><i class="fa fa-plus-square"></i>&nbsp; Enviar Contacto</button></a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <div>
@@ -52,84 +52,34 @@ Meus contactos enviado
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-            <!--th>Nome</th-->
-            <!--th>Email</th-->
-            <th>Assunto</th>
-            <th>Anexo</th>
-            <th>Opções</th>
+            <th>Nome</th>
+            <th>Pontuação</th>
+            <th>Resultado</th>
+            <th>Data</th>
             </tr>
             </thead>
             <tbody>
                <?php
    foreach ($row1 as $row)
     {
-$s1=mysqli_query($connection," SELECT name FROM patientregister WHERE id='".$row['name']."'");
-$w1 =mysqli_query($connection," SELECT name FROM patientregister WHERE id='".$row['name']."'") ;//or die(mysqli_error($connection));
+$s1=mysqli_query($connection," SELECT id FROM exameeletronico WHERE id='".$row['iduser']."'");
+$w1 =mysqli_query($connection," SELECT nome FROM exameeletronico WHERE id='".$row['nome']."'") ;//or die(mysqli_error($connection));
 //print_r($w1); exit;
 $row2=mysqli_fetch_array($w1);//or die (mysqli_error($connection));
  //print_r($row2); exit();
 ?> <tr>  
 <!--td><?php // echo $row['name'];?></td-->
 <!--td><?php// echo $row['email'];?></td-->
-<td><?php echo $row['assunto'];?></td> 
-
-<!--td><img src="./Upload/File/<?php echo $row['file'];?>" style="height:100px;width:100px;" alt="<?php echo pathinfo($row['file'], PATHINFO_FILENAME) ?>"/></td-->
-
+<td><?php echo $row['nome'];?></td> 
+<td><?php echo $row['pontuacao'];?></td>
+<td><?php echo $row['resultado'];?></td>
+<td><?php echo $row['data'];?></td>
 <td>
-  <?php
-  $filePath = "./Upload/File/" . $row['file'];
-  $allowedExtensions = ['pdf', 'txt', 'xls', 'xlsx', 'doc', 'docx'];
-
-  if (!empty($row['file']) && file_exists($filePath)) {
-    $fileExtension = strtolower(pathinfo($row['file'], PATHINFO_EXTENSION));
-
-    if (in_array($fileExtension, $allowedExtensions)) {
-      // Display default document icon
-      ?>
-      <img src="./Upload/File/pdf.jpg" style="height:35px;width:60px;" alt="Default Image" />
-   <?php
-    } else {
-      // Display the actual image
-      ?>
-      <img src="<?php echo $filePath; ?>" style="height:35px;width:60px;" alt="<?php echo pathinfo($row['file'], PATHINFO_FILENAME) ?>" />
-      <?php
-    }
-  } else {
-    // Display default image when the file is empty or doesn't exist
-    ?>
-    <img src="./Upload/File/not found.jpg" style="height:35px;width:60px;" alt="Default Image" />
-    <?php
-  }
-  ?>
-</td>
-
-<td>
-  <a href="ver_contactoUser.php?id=<?php echo $row['id']; ?>" class="btn bg-blue">
+  <a href="verexame.php?id=<?php echo $row['id']; ?>" class="btn bg-blue">
     <i class="fa fa-eye"></i>
   </a>&nbsp;&nbsp;
 
-  <a href="./Admin/donwload.php?file=<?php echo $row['file']; ?>" class="btn bg-blue">
-    <i class="fa fa-download"></i> 
-  </a>&nbsp;
-
-  <?php
-  // Check if there is an image to display
-  if (!empty($row['file']) && file_exists($filePath)) {
-  ?>
-    <a href="./Upload/File/<?php echo $row['file']; ?>" target="_blank" class="btn bg-blue">
-      <i class="fa fa-eye"></i> 
-    </a>
-  <?php
-  } else {
-    // Display a disabled button if there is no image
-    ?>
-    <button class="btn btn-primary" disabled>
-      <i class="fa fa-eye"></i> 
-    </button>
-    <?php
-  }
-  ?>
-</td>
+  
 <!--a href="./Admin/deleted.php?id=<?php // +echo $row['id']; ?>"><span class="btn btn-danger"><i class="fa fa-trash-o"></i> Apagar</span></a></td-->
 
 </tr>

@@ -55,15 +55,14 @@ if (isset($_POST["submit"])) {
                     $mensagem_exist = '
                         <div class="alert alert-danger" role="alert">
                         O e-mail do usuário já existe!
-                        </div>
-                    ';
+                        </div>';
                 } else {
                 // clean the form data before sending to database
                 $_first_name = mysqli_real_escape_string($connection, $email);
                 $_last_name = mysqli_real_escape_string($connection, $assunto);
                $_email = mysqli_real_escape_string($connection, $mensagem);
                 $_mobile_number = mysqli_real_escape_string($connection, $telefone);
-                $_senha = mysqli_real_escape_string($connection, $file);
+ //               $_senha = mysqli_real_escape_string($connection, $file);
 
         
                     // Query
