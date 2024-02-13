@@ -13,7 +13,7 @@ function mysql_fetch_all($query)
 }
 $a='';
 foreach ($m_row as $value) {
-	$a.='<option value="'.$value['preco'].'">'.$value['preco'].'</option>';
+	$a.='<option value="'.$value['preco'].'">'.$value['mainservicename'].'</option>';
 }
 echo $a;
 ?>

@@ -88,13 +88,15 @@ $sql="SELECT * FROM patientregister";
         <li>
         <a class="nav-link"  href="./mensagem/home/my_messages"><i class="fa fa-send"></i><span>Chat</span></a>
    
-        </li>
-
-        
+       
         <li>
-        <!--a class="nav-link"  href="./about.php"><i class="fa fa-info"></i><span> Sobre nós </span></a>
-     
-        </li-->
+        <!--a class="nav-link"  href="./about.php"><i class="fa fa-info"></i><span> Sobre nós </span></a-->
+</li>
+<li>
+        <a class="nav-link"  href="./exameElectronic.php"><i class="fa fa-send"></i><span>Prova Eletrónica</span></a>
+   
+   </li>
+       
     </section>
     <!-- /.sidebar -->
   </aside>

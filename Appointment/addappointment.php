@@ -6,7 +6,6 @@
 
 ?>
 <script src="../dist/dist/jquery.min.js"></script>
-
 <script>
 function getdoctor(val) {
     $.ajax({
@@ -37,12 +36,11 @@ $(function() {
     });
 });
 </script>
-<?php
 
+<?php
 $p_query=mysqli_query($connection,"SELECT * FROM patientregister")or die (mysqli_error($connection));
 $p_numrows=mysqli_num_rows($p_query)or die (mysqli_error($connection));
 $p_row1=mysql_fetch_all($p_query);
-
 
 function mysql_fetch_all($query) {
     $all = array();
@@ -51,7 +49,6 @@ function mysql_fetch_all($query) {
 }
 ?>
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
       Marcar Consulta
@@ -63,9 +60,7 @@ function mysql_fetch_all($query) {
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
       <div class="row">
 <div class="col-md-12">
     <div class="box box-primary">
@@ -75,14 +70,11 @@ function mysql_fetch_all($query) {
         <form method="POST" >
               <div class="box-body">
                 <div class="form-group">
-       
-                
                 <div class="form-group">
-                <label for="exampleInputEmail1">Paciente</label><br>
-                 <select name="patient" id="patient" class="form-control select2"  placeholder=""  required="required">
+                <label for="exampleInputEmail1">Paciente</label>
+                <select name="patient" id="patient" class="form-control select2"  required="required">
                  
 <?php
-
 $p_query="SELECT * FROM beneficiario ";
 $res=mysqli_query($connection,$p_query);
 while ($row1 =mysqli_fetch_array($res)) {
@@ -90,19 +82,17 @@ while ($row1 =mysqli_fetch_array($res)) {
 <option value="<?php echo $row1['id'];?>"><?php echo $row1['namebenif'];?>
 
 </option>  
- 
+
 <?php } ?> 
 <?php
 
  $p_query="SELECT * FROM patientregister";
 $res=mysqli_query($connection,$p_query);
 while ($row1 =mysqli_fetch_array($res)) {
-   echo $row1['id'];?>
-<option value="<?php echo $row1['id'];?>"><?php echo $row1['name'];?>
- </option>            
-  
-<?php } ?> 
-
+    $row1['id'];?>
+<option value="<?php $row1['id'];?>"><?php echo $row1['name'];?>
+<?php } ?>  
+</option>            
 </select>
 </div>
 

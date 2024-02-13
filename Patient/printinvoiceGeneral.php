@@ -56,7 +56,7 @@ if(isset($_POST['submit']))
  <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        Fatura
+      &nbsp;&nbsp;Fatura
         <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -68,15 +68,15 @@ if(isset($_POST['submit']))
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
-            <i class=""></i><b>&nbsp;&nbsp;&nbsp;Clínica-Saúde</b>
+            <i class=""></i><b>&nbsp;Lameira-Soft</b>
             <small class="pull-right">Date: <?php echo $d1=date('Y-m-d'); ?></small>
           </h2>
         </div>
        </div>
 	<div class="row invoice-info">
  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 		<img src="396d647172a127fc92e2e59f5f77ef6d.jpg" width="120" height="120" alt="Stethoscope free icon" title="Stethoscope free icon">
-    
+ 		<img src="../Upload/Adminprofile/Logotipo Clinica Saude.png" width="80" height="80" alt="Stethoscope free icon" title="Stethoscope free icon">
+   </small>
 		 <div class="col-sm-4 invoice-col" style="float: right;">
           <b>Código da Fatura: <?php echo $p_row1['invoice'];?></b><br>
        
@@ -90,12 +90,11 @@ if(isset($_POST['submit']))
      	 <div class="row invoice-info">
      	 <div class="col-sm-4 invoice-col" style="float: left;">
      	 
-          <adddivress>
-          
-                    <b><p>Localização |</b> Zaire-Soyo Bairro Pangala Rua principal</p>
-                            <b><p>Telefone |</b> 937 277 985 | 998 521 361 | 937 279 624</p>
-                            <b><p>Email |</b> atendimento@clinica-saude.co.ao</p>
-                            <b><p>Site |</b> www.clinica-saude.co.ao</p>
+          <address>
+          <b><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Localização | </b>Luanda-Vina-Angola</p>
+          <b><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Telefone | </b>944 259 591| 957 264 334</p>
+          <b><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email | </b>atendimento@lameirasoft.ao</p>
+          <b><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Site | </b>www.lameirasoft.ao</p>
           </address>
         </div>
         <div class="col-sm-4 invoice-col" style="float: right;">
@@ -176,7 +175,7 @@ if(isset($_POST['submit']))
         <td><?php if (!empty($row['depositammount']))
          {
             ?>    <?php } else{?>
-               
+               <td colspan="3">Sem dados</td>
            <?php }  ?>
          
         </tr>
@@ -225,18 +224,19 @@ if(isset($_POST['submit']))
    <div class="alert alert-success alert-dismissible pull-right"style="width: 12%;">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <h4><i class="fa fa-money"></i> Total</h4>
-        <?php $r1= $row3['subtotal']-$row4['depositammount'];?>
-        <center><font size="5"> Kz.<?php echo $r1;?></font>
+        <?php// $r1= $row3['subtotal']-$row4['depositammount'];?>
+        <center><font size="5"> Kz.<?php// echo $r1;?></font>
         </center>
            </div> -->
       
      
        
   </section>
-  <div> 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div> 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="paymenthistory.php?id=<?php echo $_GET['id']; ?>"><span class="btn bg-blue"><i class="fa fa-back"></i> Voltar<!--span class="popuptext" id="myPopup">Get full version at rogeriolameira@gmail.com</span--></span></a><!--&nbsp;&nbsp-->
   <button onclick=" window.print();" id="print-btn" class="btn bg-blue"><i class="fa  fa-print"></i>  Imprimir</button>
-        </div>
+      <br>   <br>   
+</div>
   </div>
   </div>
  

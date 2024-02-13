@@ -18,7 +18,7 @@ session_start();
 <div class="content-wrapper">
 <section class="content-header">
   
-    <h3><font color="#e90a0a ">Página Principal</font></h3>
+    <h3><font color="#e90a0a ">Painel de Admin</font></h3>
 
         <small></small>
      

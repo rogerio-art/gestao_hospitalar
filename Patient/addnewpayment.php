@@ -94,7 +94,7 @@ if(isset($_POST['submit']))
       die("that format is not allowed or file size is too big!");
     }
     else
-    { move_uploaded_file($temp,"../Upload/".$imgname);//move upload file  
+    { move_uploaded_file($temp,"../Upload/users/".$imgname);//move upload file  
       echo"Upload Complete";
     }
   }
@@ -108,7 +108,6 @@ if(isset($_POST['submit']))
     }
     ?>
      <script src="../dist/dist/jquery.min.js"></script>
-
 
 <script>
 $ (function (){
@@ -143,42 +142,33 @@ $ ("#categoryselect") .change(function(){
         <div class="col-md-12">
   <!-- Trigger the modal with a button -->
    <!-- <a href="./patientregister.php"> -->
-   <!-- <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" style="height: 40px;"><i class="fa fa-plus-square"></i> Register Patient</button> </a> --><br><br> 
+   <!-- <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" style="height: 40px;"><i class="fa fa-plus-square"></i> Register Patient</button> </a> -->
 
   <!-- Modal -->
 
-
-  
   <!-- Trigger the modal with a button -->
    <!-- <a href="./patientregister.php"> -->
-   <!-- <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" style="height: 40px;"><i class="fa fa-plus-square"></i> Register Patient</button> </a> --><br><br> 
+   <!-- <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" style="height: 40px;"><i class="fa fa-plus-square"></i> Register Patient</button> </a> -->
 
   <!-- Modal -->
- 
-  
-
-  <form method="POST" >
-  <div class="col-md-4">
+  <form method="POST"  class="row g-3">
+  <div class="col-md-6">
 <label> Número da Fatura</label>
   <?php 
-$query = "SELECT * FROM addpayment ORDER BY id DESC LIMIT 1";
+$query = "SELECT * FROM addpayment ORDER BY id ";//DESC LIMIT 1";
 $w4=mysqli_query($connection,$query) or die(mysqli_error($connection));
 $r4=mysqli_fetch_array($w4)or die (mysqli_error($connection));
 // $result = mysql_query($query);
 // mysql_num_rows($result);
 $no=$r4['id'];
         ?>
-
-
-         <input type="text" name="invoice" class="form-control" placeholder="" value="CS-<?php echo sprintf("%'.08d",$no);?>">
-<br>
+         <input type="text" name="invoice" class="form-control" placeholder="" value="LS-<?php echo sprintf("%'.08d",$no);?>">
   <label >Paciente</label><br>
   <input type="text" name="p_name" value="<?php echo $p_row1['name'];?>" class='form-control' placeholder='' readonly>
   <input type="hidden" name="patient" value="<?php echo $p_row1['id'];?>">
-  <br>
-   
+ 
  <label> Escolher o Serviço</label>
-<select name="servico" id="categoryselect" placeholder="" class='form-control'>
+<select name="servico" id="categoryselect" placeholder="" class="form-control select2">
   <option>--Selecione--</option>
   <?php foreach ($m_row as $p) {?>
   <option value="<?php echo $p['id'];?>"><?php echo $p['mainservicename'];?></option>
@@ -190,25 +180,26 @@ $no=$r4['id'];
 </select>
 </div>  
  <div class="col-md-2">
-<div type="hidden" class="box">
-  
-  <div id="sub" ></div>
-  </div>
+
 </div>
 <div class="col-md-6"  style="float:right;">
 
  <!-- <label> Total</lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
-  <input type ="hidden" name="subtotal" id="subtotal" value="0"><br><br>
-  <input type ="hidden" name="temp" id="temp" value="">
-<label> Quantidade </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type ="text" name="quantidade" id="chDiscount" ><br><br>
-   <label> Total Geral</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-  <input type ="text" name="grosstotal" id="result" value="0"><br><br>
+  <input type ="hidden" name="subtotal" id="subtotal" value="0">
+  <input type ="hidden" name="temp" id="temp" value="form-control">
+<label> Quantidade </label>
+  <input type ="text" name="quantidade" id="chDiscount" class="form-control">
+   <label> Total Geral</label>
+  <input type ="text" name="grosstotal" id="result" value="0" class="form-control">
    <!-- <label> Data</label> -->
-   <input type ="hidden" name="amountreceived"><br><br>
-
+   <input type ="hidden" name="amountreceived" class="form-control">
+   <br>  <br>
+   <textarea id ="sub" name="listItem" class=""></textarea> 
+<br>
+<br>
+<br>
  <button type="submit" name="b1" class="btn bg-blue" >Salvar</button>
- <!--a href="paymenthistory.php?id=<?php echo $_GET['id']; ?>"><span class="btn btn-primary"><i class="fa fa-back"></i> Voltar -->   <!--span class="popuptext" id="myPopup">Get full version at rogeriolameira@gmail.com</span--></span></a><!--&nbsp;&nbsp-->
+ <a href="./patientlist.php"><span class="btn btn-primary"><i class="fa fa-back"></i> Voltar </span></a> <!--span class="popuptext" id="myPopup">Get full version at rogeriolameira@gmail.com</span--></span></a><!--&nbsp;&nbsp-->
 
             </div>
            </form>
@@ -216,14 +207,12 @@ $no=$r4['id'];
            </section>
 </div>
 <?php include "../Include/footer.php";?>
-     
        
        </div>
-       
-
        </div>
     </div>
    </div>
+   
 </div>
 </div>
 
@@ -253,8 +242,9 @@ $('#subservice').on('change', function()
     data:{sub_id:service_id}
   }).done(function(result)
   {
+    result=service_id;
     //$('#sub').append(result);
-    $('#sub').append("<br> resultado: " + result);
+    $('#sub').append(result + '<br>');
     var temp=$('#temp').val(result); 
     //$('#subtotal')=a+result;
     //alert(sum)

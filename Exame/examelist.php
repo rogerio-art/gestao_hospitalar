@@ -85,7 +85,7 @@ foreach ($row1 as $row)
 <td><?php echo $row['data'];?></td>
 
   <td>
-  <a href="exame.php?id=<?php echo $row['id'];?>"><span class="btn bg-blue "><i class="fa fa-eye"></i> Ver</span></a>&nbsp;&nbsp;
+  <a href="Exame.php?id=<?php echo $row['id'];?>"><span class="btn bg-blue "><i class="fa fa-eye"></i> Ver</span></a>&nbsp;&nbsp;
   <!--a href="editprescription.php?id=<?php //echo $row['id'];?>"><span class="btn btn-success"><i class="fa fa-edit"></i> Editar</span></a-->&nbsp;&nbsp;
   <!-- <a href="delete.php?id=<?php echo $row['id'];?>"><span class="btn btn-danger"><i class="fa fa-trash-o"></i>Apagar</span></a></td> -->
 </tr>
@@ -100,4 +100,4 @@ foreach ($row1 as $row)
 </div>
 </body>
 <?php include('../Include/footer.php');?>
-</html>
+</html>                                                                                                                                                                                                                                                                                         

@@ -29,7 +29,6 @@ $p_row1=mysqli_fetch_array($p_query);
          <section class="content-header">
        
       <ol class="breadcrumb">
-
    
       </ol>
     </section>
@@ -37,14 +36,14 @@ $p_row1=mysqli_fetch_array($p_query);
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
-            <i class=""></i><b>&nbsp;&nbsp;&nbsp;Clínica-Saúde</b>
+            <i class=""></i><b>&nbsp;&nbsp;&nbsp;Lameira-Soft</b>
             <small class="pull-right">Date: <?php echo $d1=date('Y-m-d'); ?></small>
           </h2>
         </div>
        </div>
 	<div class="row invoice-info">
  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 		<img src="396d647172a127fc92e2e59f5f77ef6d.jpg" width="120" height="120" alt="Stethoscope free icon" title="Stethoscope free icon">
+ 		<img src="../Upload/Adminprofile/Logotipo%20Clinica%20Saude.png" width="120" height="120" alt="Stethoscope free icon" title="Stethoscope free icon">
     
 		 <div class="col-sm-4 invoice-col" style="float: right;">
           <b>Código da Fatura: <?php echo "1234567";?></b><br>
@@ -59,10 +58,10 @@ $p_row1=mysqli_fetch_array($p_query);
      	 
           <address>
             <strong></strong>
-            <b><p>Localização |</b> Zaire-Soyo Bairro Pangala Rua principal</p>
-                            <b><p>Telefone |</b> 937 277 985 | 998 521 361 | 937 279 624</p>
-                            <b><p>Email |</b> atendimento@clinica-saude.co.ao</p>
-                            <b><p>Site |</b> www.clinica-saude.co.ao</p>
+            <b><p>Localização |</b> Luanda - Viana Angola</p>
+                            <b><p>Telefone |</b> 944 259 591 | 957 264 334</p>
+                            <b><p>Email |</b> atendimento@lameirasoft.ao</p>
+                            <b><p>Site |</b> www.lameirasoft.ao</p>
           </address>
         </div>
         <div class="col-sm-4 invoice-col" style="float: right;">

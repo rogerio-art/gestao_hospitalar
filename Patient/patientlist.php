@@ -3,16 +3,7 @@ include("../inc/connect.php");
 ?>
 
 <?php include"../Include/header.php";?>
-
-
-
-
-        <?php include"../Include/sidebar.php";?>
-
-
-
-
-
+ <?php include"../Include/sidebar.php";?>
 
 <?php
 $query=mysqli_query ($connection,"SELECT `id`,`name`,`phone`,`email`,`address` FROM patientregister")or die (mysqli_error($connection));
@@ -91,7 +82,6 @@ function mysql_fetch_all($query)
 <?php 
      foreach ($row1 as $row5)
       {
-
 ?> <tr>
  
 <!-- <td><?php // echo $row['id'];?></td> -->
@@ -99,11 +89,10 @@ function mysql_fetch_all($query)
 <td><?php echo $row5['email'];?></td>
 <td><?php echo $row5['address'];?></td>
 <td><?php echo $row5['phone'];?></td>
+
 <td><a href="editpatient1.php?id=<?php echo $row5['id']; ?>"><span class="btn btn-success bg-blue"><i class="fa fa-edit"></i>Editar </span></a>
-
- <a href="info.php?id=<?php echo $row5['id']; ?>"><span class="btn btn-primary bg-blue"><i class="fa fa-info"></i>Info</span><!--&nbsp;&nbsp;-->
-
-  <a href="casehistory.php"> <span class="btn  bg-blue "><i class="fa fa-history"></i>Historico</span><!--&nbsp;&nbsp;-->
+<a href="info.php?id=<?php echo $row5['id']; ?>"><span class="btn btn-primary bg-blue"><i class="fa fa-info"></i>Info</span><!--&nbsp;&nbsp;-->
+<!--a href="casehistory.php?id=<?php //echo $row5['id'];?>"> <span class="btn  bg-blue "><i class="fa fa-history"></i>Historico</span--><!--&nbsp;&nbsp;-->
 
   <?php
   $sql="SELECT count(*) FROM  addpayment WHERE patient='".$row5['id']."'";

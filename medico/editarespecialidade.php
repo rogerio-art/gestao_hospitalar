@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
                 <input type="hidden" class="form-control" name="id" id="exampleInputEmail1" placeholder=""><br>
               <label>Especialidade </label><br>
             <input type="name" class="form-control" name="nomeespecialidade" id="exampleInputEmail1" placeholder="" value="<?php echo $nomeespecialidade;?>">
-            <label>Nome </label><br>
+            <label>Preço </label><br>
             <input type="name" class="form-control" name="preco" id="exampleInputEmail1" placeholder="" value="<?php echo $preco;?>">
            
             <br><br>

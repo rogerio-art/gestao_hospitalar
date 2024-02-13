@@ -22,6 +22,7 @@ if (empty($_SESSION['email'])) {
   <style>
         body {
             font-family: Arial, sans-serif;
+            color:white;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -30,7 +31,7 @@ if (empty($_SESSION['email'])) {
         #exam-container {
             max-width: 600px;
             margin: 50px auto;
-            background-color: #fff;
+            background-color: #0d6efd;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -44,6 +45,7 @@ if (empty($_SESSION['email'])) {
             padding: 10px;
             font-size: 16px;
             margin-right: 10px;
+            color: black;
         }
 
         #result-container {

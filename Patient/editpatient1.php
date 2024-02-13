@@ -21,12 +21,10 @@
    //echo "$firstname"; exit();
 ?>
 <?php
-//include("../inc/connect.php") ;
-
-//session_start();
 if(isset($_POST['Save']))
 { 
     $id=$_POST['id'];
+
 //print_r($_FILES["profile_pic"]["name"]); exit;
      if($_FILES["profile_pic"]["name"]!='')
   {
@@ -50,7 +48,7 @@ $error = $_FILES["profile_pic"]["error"];//size
     }
     else
     { //echo "string"; exit;
-     move_uploaded_file($temp,"../Upload/profile/".$imgname);
+     move_uploaded_file($temp,"../Upload/users/".$imgname);
       @unlink('../Upload/profile/'.$_POST['old_profile']);
     }
   }
@@ -60,8 +58,6 @@ $error = $_FILES["profile_pic"]["error"];//size
       $imgname=$_POST['old_profile'];
     }
 
-      //$profilepic=$_FILES["profilepic"]["name"];
-   
     $name=$_POST['name'];
     $email=$_POST['email'];
     $address=$_POST['address'];
@@ -72,10 +68,12 @@ $error = $_FILES["profile_pic"]["error"];//size
     $status=$_POST['active'];
    
       $write =mysqli_query($connection,"UPDATE patientregister SET name=' $name',email='$email',address='$address',phone='$phone',gender='$gender',birthdate='$birthdate',bloodgroup='$bloodgroup',imageupload='$imgname',status='$status' WHERE  id='".$_GET['id']."'") or die(mysqli_error($connection));
-      //$query=mysql_query("SELECT * FROM user ")or die (mysql_error());
-      //$numrows=mysql_num_rows($query)or die (mysql_error());
-      echo " <script>setTimeout(\"location.href='../Patient/patientlist.php';\",150);</script>";
-    }
+       //\\   $query=mysql_query("SELECT * FROM user ")or die (mysql_error());
+      //__\\   $numrows=mysql_num_rows($query)or die (mysql_error());
+     //____\\   
+    //      \\  
+    echo " <script>setTimeout(\"location.href='../Patient/patientlist.php';\",150);</script>";
+  }
     
 
 ?>
@@ -112,18 +110,18 @@ $error = $_FILES["profile_pic"]["error"];//size
         </div>
         <div class="col-md-3" style="float: right;">
            <input type="hidden" name="old_profile" value="<?php echo $imageupload; ?>" >
-    <img class="profile-img " name="imageupload" src="../Upload/profile/<?php  echo  $imageupload; ?>" alt="profile picture" style="height:150px;width:150px;" class="form-control">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <label>Carregar Imagem<label>
          <input type="file" name="profile_pic" >
-           
-         </div>   
+         </div> 
+         
    
 <div class="col-md-2">
 <span style="color:red;">*</span><b>Género</b>
   
- <select type="text" name="gender" class="form-control" >
-  <option value="<?php echo  $gender;?>" disabled selected="selected"><?php echo  $gender;?></option>
-<option value="Male" <?php if($gender=='Male'){ echo "selected"; } ?>>Masculino</option> 
-<option value="Female" <?php if($gender=='Female'){ echo "selected"; } ?>>Femenino</option>
+ <select type="text" name="gender" class="form-control" required>
+  <option value="<?php echo  "Género";?>" disabled selected="selected"><?php echo  $gender;?></option>
+<option value="Male"   <?php if($gender=='Male'){ echo "selected";  } ?>>Masculino</option> 
+<option value="Female" <?php if($gender=='Female'){ echo "selected";} ?>>Femenino</option>
 <option value="Other">Outro</option>
   </select>
 </div>
@@ -159,9 +157,8 @@ $error = $_FILES["profile_pic"]["error"];//size
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      <div class="col-md-2" >
 <b>Address</b>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type ="text" name="address" value="<?php echo  $address;?>" class="form-control">
-  </div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<input type ="text" name="address" value="<?php echo  $address;?>" class="form-control">
+  </div>
  <div class="col-md-2" >
    <span style="color:red;">*</span><b>Email(Nome do usuário)</b><br>
    <input type ="email" name="email" value="<?php echo  $email;?>" class="form-control">
@@ -176,7 +173,7 @@ $error = $_FILES["profile_pic"]["error"];//size
   <br><br><br>
 <div class="box-footer">
            <button type="submit"  name="Save" class="btn btn-success bg-green" ><i class="fa fa-file-text"></i> Salvar</button>
-          <!--  <button type="reset"  name="reset" class="btn btn-primary" value="reset"><i class="f fa fa-undo"></i> Reset</button> -->
+          <!--button type="reset"  name="reset" class="btn btn-primary" value="reset"><i class="f fa fa-undo"></i> Reset</button--> 
           <a href="./patientlist.php"><button type="button" name="cancel" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button></a>
               </div>
   </form>

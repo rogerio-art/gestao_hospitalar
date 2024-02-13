@@ -4,12 +4,6 @@
         <html lang="en">
         <head>
             <meta charset="utf-8">
-        
-              <!-- Bootstrap 3.3.7 -->                                       
-  
- 
-       
-
         </head>
 
 <?php

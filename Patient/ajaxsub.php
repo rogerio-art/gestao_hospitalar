@@ -1,9 +1,9 @@
 <?php
 include("../inc/connect.php") ;
-$service_id=$_POST['sub_id'];
-$sub_q=mysqli_query($connection,"SELECT * FROM subservices WHERE sid='".$service_id."'")or die (mysqli_error($connection));
-$sub_numrows=mysqli_num_rows($sub_q)or die (mysqli_error($connection));
-$sub_row=mysql_fetch_all($sub_q);
+$id=$_POST['sub_id'];
+$q1=mysqli_query($connection,"SELECT * FROM mainservices WHERE id='".$id."'")or die (mysqli_error($connection));
+$p_numrows=mysqli_num_rows($q1)or die (mysqli_error($connection));
+$m_row=mysql_fetch_all($q1);
 function mysql_fetch_all($query)
  {
  	$temp='';
@@ -11,9 +11,9 @@ function mysql_fetch_all($query)
     while ($all[] = mysqli_fetch_assoc($query)) {$temp=$all;}
     return $temp;
 }
-$b='';
-foreach ($sub_row as $value) {
-	$b.=$value['Fee'];
+$a='';
+foreach ($m_row as $value) {
+	$a.='<option value="'.$value['mainservicename'].'">'.$value['mainservicename'].'</option>';
 }
-echo $b;
+echo $a;
 ?>

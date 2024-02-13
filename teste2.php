@@ -1,128 +1,106 @@
-<?php
-    $instructor_list = $this->user_model->get_instructor_list()->result_array();
-?>
-<!-- <section class="page-header-area my-course-area">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                < <h1 class="page-title"><?php echo get_phrase('my_courses'); ?></h1>
-                 <ul>
-                  <li><a href="<?php echo site_url('home/my_courses'); ?>"><?php echo get_phrase('all_courses'); ?></a></li>
-                  <li><a href="<?php echo site_url('home/my_wishlist'); ?>"><?php echo get_phrase('wishlists'); ?></a></li>
-                  <li class="active"><a href="<?php echo site_url('home/my_messages'); ?>"><?php echo get_phrase('my_messages'); ?></a></li>
-                  <li><a href="<?php echo site_url('home/purchase_history'); ?>"><?php echo get_phrase('purchase_history'); ?></a></li>
-                  <li><a href="<?php echo site_url('home/profile/user_profile'); ?>"><?php echo get_phrase('user_profile'); ?></a></li>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Dinâmico</title>
+    <link rel="stylesheet" href="teste.css">
+</head>
+<body>
+<div class="container">
+        <h2>Selecione um Item:</h2>
+        <form id="addItemForm">
+            <select id="dropdown">
+            <option value=<?php include 'dropdown.php';?>
+            </select>
+            <input type="button" value="Adicionar" onclick="addSelectedItem()">
+        </form>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1;">
+                <h2>Itens Selecionados:</h2>
+                <ul id="selected-items-list">
+                    <!-- Os itens selecionados serão exibidos aqui -->
+                </ul>
+            </div>
+            
+            <div style="flex: 1;">
+                <h2>Itens Adicionados:</h2>
+                <ul id="added-items-list">
+                    <!-- Os itens adicionados serão exibidos aqui -->
                 </ul>
             </div>
         </div>
+
+        <h2>Total:</h2>
+        <p id="total-value">0</p>
     </div>
-</section> -->
 
+    <script type="text/javascript">
+        function addSelectedItem() {
+            // Obter o valor selecionado na dropdown
+            var dropdown = document.getElementById("dropdown");
+            var selectedValue = dropdown.options[dropdown.selectedIndex].value;
 
-<section class="message-area">
-    <div class="container">
-        <div class="row no-gutters align-items-stretch">
-            <div class="col-lg-5">
-                <div class="message-sender-list-box">
-                    <button class="btn compose-btn" type="button" id="NewMessage" onclick="NewMessage(event)">Iniiciar Nova Conversa</button>
-                    <hr>
-                    <ul class="message-sender-list">
+            // Obter o texto (mainservicename) selecionado na dropdown
+            var selectedText = dropdown.options[dropdown.selectedIndex].text;
 
-                        <?php
-                        $current_user = $this->session->userdata('user_id');
-                        $this->db->where('sender', $current_user);
-                        $this->db->or_where('receiver', $current_user);
-                        $message_threads = $this->db->get('message_thread')->result_array();
-                        foreach ($message_threads as $row):
+            // Verificar se o item já foi selecionado antes de adicioná-lo à lista
+            if (!isItemAlreadySelected(selectedValue)) {
+                // Criar um novo item de lista para a lista de itens selecionados
+                var selectedListItem = document.createElement("li");
+                selectedListItem.textContent = selectedText; // Usar o texto ao invés do valor
 
-                            // defining the user to show
-                            if ($row['sender'] == $current_user)
-                            $user_to_show_id = $row['receiver'];
-                            if ($row['receiver'] == $current_user)
-                            $user_to_show_id = $row['sender'];
+                // Adicionar o item à lista de itens selecionados
+                var selectedItemsList = document.getElementById("selected-items-list");
+                selectedItemsList.appendChild(selectedListItem);
 
-                            $last_messages_details =  $this->crud_model->get_last_message_by_message_thread_code($row['message_thread_code'])->row_array();
-                            ?>
-                            <a href="<?php echo site_url('home/my_messages/read_message/'.$row['message_thread_code']); ?>">
-                                <li>
-                                    <div class="message-sender-wrap">
-                                        <div class="message-sender-head clearfix">
-                                            <div class="message-sender-info d-inline-block">
-                                                <div class="sender-image d-inline-block">
-                                                    <img src="<?php echo $this->user_model->get_user_image_url($user_to_show_id);?>" alt="" class="img-fluid">
-                                                </div>
-                                                <div class="sender-name d-inline-block">
-                                                    <?php
-                                                    $user_to_show_details = $this->user_model->get_all_user($user_to_show_id)->row_array();
-                                                    echo $user_to_show_details['first_name'].' '.$user_to_show_details['last_name'];
-                                                    ?>
-                                                </div>
-                                            </div>
-                                            <div class="message-time d-inline-block float-right"><?php echo date('D, d-M-Y', $last_messages_details['timestamp']); ?></div>
-                                        </div>
-                                        <div class="message-sender-body">
-                                            <?php echo $last_messages_details['message']; ?>
-                                        </div>
-                                    </div>
-                                </li>
-                            </a>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="message-details-box" id = "toggle-1">
-                    <?php include 'inner_messages.php'; ?>
-                </div>
-                <div class="message-details-box" id = "toggle-2" style="display: none;">
-                    <div class="new-message-details"><div class="message-header">
-                        <div class="sender-info">
-                            <span class="d-inline-block">
-                                <i class="far fa-user"></i>
-                            </span>
-                            <span class="d-inline-block"><?php echo get_phrase('Nova Mensagem'); ?></span>
-                        </div>
-                    </div>
-                    <form class="" action="<?php echo site_url('home/my_messages/send_new'); ?>" method="post">
-                        <div class="message-body">
-                            <div class="form-group">
-                                <select class="form-control select2" name = "receiver">
-                                    <?php foreach ($instructor_list as $instructor):
-                                        if ($instructor['id'] == $this->session->userdata('user_id'))
-                                            continue;
-                                        ?>
-                                        <option value="<?php echo $instructor['id']; ?>"><?php echo $instructor['first_name'].' '.$instructor['last_name']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" class="form-control"></textarea>
-                            </div>
-                            <button type="submit" class="btn send-btn"><?php echo get_phrase('Enviar'); ?></button>
-                            <button type="button" class="btn cancel-btn" onclick = "CancelNewMessage(event)">Cancelar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-<script type="text/javascript">
-function NewMessage(e){
+                // Criar um novo item de lista para a lista de itens adicionados
+                var addedListItem = document.createElement("li");
+                addedListItem.textContent = selectedValue; // Usar o texto ao invés do valor
+                addedListItem.setAttribute("data-price", selectedValue); // Adicionar atributo com o preço
+                
+                //addedListItem.textContent = selectedValue; // Usar o valor ao invés do texto
+                //addedListItem.setAttribute("data-price", selectedValue); // Atualizar o atributo com o preço
 
-    e.preventDefault();
-    $('#toggle-1').hide();
-    $('#toggle-2').show();
-    $('#NewMessage').removeAttr('onclick');
-}
+                // Adicionar o item à lista de itens adicionados
+                var addedItemsList = document.getElementById("added-items-list");
+                addedItemsList.appendChild(addedListItem);
 
-function CancelNewMessage(e){
+                // Atualizar o total
+                updateTotal();
+            }
+        }
 
-    e.preventDefault();
-    $('#toggle-2').hide();
-    $('#toggle-1').show();
+        function isItemAlreadySelected(itemValue) {
+            // Verificar se o item já está na lista de itens selecionados
+            var selectedItemsList = document.getElementById("selected-items-list");
+            var items = selectedItemsList.getElementsByTagName("li");
 
-    $('#NewMessage').attr('onclick','NewMessage(event)');
-}
-</script>
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].textContent === itemValue) {
+                    alert("Item já selecionado!");
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function updateTotal() {
+            // Calcular o total dos valores na lista de itens adicionados
+            var addedItemsList = document.getElementById("added-items-list");
+            var items = addedItemsList.getElementsByTagName("li");
+            var total = 0;
+
+            for (var i = 0; i < items.length; i++) {
+                // Usar o valor do atributo data-price para obter o preço
+                total += parseFloat(items[i].getAttribute("data-price"));
+            }
+
+            // Exibir o total no elemento HTML
+            var totalElement = document.getElementById("total-value");
+            totalElement.textContent = total;
+        }
+    </script>
+</body>
+</html>

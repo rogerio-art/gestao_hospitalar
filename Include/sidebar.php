@@ -52,7 +52,7 @@
             <li><a href="../Patient/patientlist.php"><i class="fa fa-user"></i>Paciente</a></li>
             <li><a href="../Patient/newprofile.php"><i class="fa fa-book"></i> Add Benificiário</a></li>
             <!--li><a href="../Patient/addnewpayment.php"><i class="fa fa-plus"></i> Novo Paciente</a></li-->
-            <!--li><a href="../Patient/payments.php"><i class="fa fa-dollar"></i> Pagamento</a></li-->
+            <li><a href="../Patient/payments.php"><i class="fa fa-dollar"></i> Pagamento</a></li>
             <!--li><a href="../Patient/casehistory.php"><i class="fa fa-book"></i> Histórico</a></li-->
 
             <!--li><a href="../Patient/patientdetails.php"><i class="fa fa-wheelchair"></i> Pacientes<span class="popuptext" id="myPopup">Get full version at rogeriolameira2017@outlook.com</span--></a></li>

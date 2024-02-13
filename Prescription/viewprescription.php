@@ -1,9 +1,9 @@
-<?php include"../Include/header.php";?>
-<?php include"../Include/sidebar.php";?>
+
 <?php
 include("../inc/connect.php") ;
 ?>
-
+<?php include"../Include/header.php";?>
+<?php include"../Include/sidebar.php";?>
 
 <link rel="stylesheet" type="text/css"  href="print.css" media="print">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css">
@@ -79,11 +79,11 @@ function mysql_fetch_all($query) {
                          <img src="../Upload/Adminprofile/Logotipo Clinica Saude.png"  width="10%" height="10%" class="img-circle" alt="Clinica saude logo">
                          <th>
                         
-                         <h3><p>Clínica-Saude</p></h3>
-                           <b><p>Localização |</b>Zaire-Soyo Bairro Pangala Rua principal</p>
-                            <b><p>Telefone |</b> 937 277 985 | 998 521 361 | 937 279 624</p>
-                            <b><p>Email |</b> atendimento@clinica-saude.co.ao</p>
-                            <b><p>Site |</b> www.clinica-saude.co.ao</p>
+                         <h3><p>Lameira-Soft</p></h3>
+                           <b><p>Localização |</b>Luanda - Viana - Viana Angola</p>
+                            <b><p>Telefone |</b> 944 259 591 | 957 264 334</p>
+                            <b><p>Email |</b> atendimento@lameirasoft.ao</p>
+                            <b><p>Site |</b> www.lameirasoft.ao</p>
                          
                           <p><strong>Nº da Prescrição <?= time(); ?></strong></p></h5> 
                         </th>
@@ -192,10 +192,6 @@ $sql="SELECT * FROM login";
 
                 <div class="row">
                 <div class="col-md-12">
-                        
-              
-                   
-                      
                         <p><center> O (a) Médico(a) </center></p>
                         <p><center> ________________________________________________ </center></p>
                         <p><center> <?php echo $row2['fname'];?>&nbsp;
@@ -204,51 +200,38 @@ $sql="SELECT * FROM login";
                     </div>
                     </div>
       </br>
-      </br>
-      </br>
-
                     <div class="row">
                 <div class="col-md-12">
                     <p> Processado por computador </p>
                         <p>Desenvolvidopor Consenci-Consultoria de Informática </p>
                         <p> www.consenci.com</p>
-                 
-                   
                     <!-- <div class="col-md-6">
                         <p>Email: <strong><?//=$_SESSION['email']; ?></strong></p>
                         <p>Telefone: <strong><?//=$_SESSION['phone']; ?></strong></p>
                     </div> -->
-
                     </div>
                     </div>
-                
-
-                <!-- DADOS DE PAGAMENTO -->
-                
-                
+                    
                 </div>
-
-                
-                </div>
-
-    </div>
+            </div>
+     </div>
     
 </div>
-         
-   
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<a href="./prescription.php"><span  class="btn bg-blue" class="hidden-xs" ><i class="fa fa-back"></i>Voltar</span></a><!--&nbsp;&nbsp;-->
+         <button onclick=" window.print();" id="print-btn" class="btn bg-blue"><i class="fa  fa-print"></i>  Imprimir</button>
+         </div>
+         </div>
+
+</div>
+</div>
 </div>
 </section>
-<div class="row">
-                <div class="col-md-6">
-                         <!--button   href="./prescription.php"><span  class="btn bg-blue" class="hidden-xs" ><i class="fa fa-back"></i>Voltar</span></button--><!--&nbsp;&nbsp;-->
-         <button onclick=" window.print();" id="print-btn" class="btn bg-blue"><i class="fa  fa-print"></i>  Imprimir</button>
-        </div>
-        </div>
 </div>
 </div>
 </body>
 <?php include('../Include/footer.php');?>
 </html>
-
-
-

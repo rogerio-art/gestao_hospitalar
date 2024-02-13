@@ -35,13 +35,17 @@ try {
     $duplicate_user_query="select id from patientregister where email='$email'";
     $duplicate_user_result=mysqli_query($connection,$duplicate_user_query) or die(mysqli_error($connection));
     $rows_fetched=mysqli_num_rows($duplicate_user_result);
+
+    $duplicate_name_query="select id from patientregister where name='$name'";
+    $duplicate_nsme_result=mysqli_query($connection,$duplicate_name_query) or die(mysqli_error($connection));
+    $rows_name_fetched=mysqli_num_rows($duplicate_nsme_result);
     $grupoSanguino = "não definido";
-    if($rows_fetched>0){
+    if($rows_fetched || $rows_name_fetched >0){
         //duplicate registration
         //header('location: signup.php');
         ?>
         <script>
-            window.alert("Este email já existe na base de dados!");
+            window.alert("email ou nome de usuário já existe na base de dados!");
         </script>
         <meta http-equiv="refresh" content="1;url=signup.php" />
         <?php

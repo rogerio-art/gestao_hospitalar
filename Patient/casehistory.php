@@ -15,17 +15,20 @@ if(isset($_POST['submit']))
    $write =mysqli_query($connection,"INSERT INTO addmedicalhistory(`date`,`patient`,`description`) VALUES ('$date','$patient','$description')") or die(mysqli_error($connection));
       //$query=mysql_query("SELECT * FROM user ")or die (mysql_error());
       //$numrows=mysql_num_rows($query)or die (mysql_error());
-    echo " <script>setTimeout(\"location.href='../Patient/casehistory.php';\",150);</script>";
+    echo " <script>setTimeout(\"location.href='./Patient/casehistory.php';\",150);</script>";
     }
       
 
 ?>
 <?php
 //include("../inc/connect.php") ;
-$query=mysqli_query($connection,"SELECT * FROM addmedicalhistory")or die (mysqli_error($connection));
+$query=mysqli_query($connection,"SELECT * FROM addmedicalhistory where patient = '".$_GET['id']."'") or die (mysqli_error($connection));
 $numrows=mysqli_num_rows($query)or die (mysqli_error($connection));
 $row1=mysql_fetch_all($query);
 
+if($row1 <1){  //to be continue
+echo "Sem dados para mostrar";
+}
 
 
 
