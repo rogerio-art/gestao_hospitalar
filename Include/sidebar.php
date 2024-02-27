@@ -186,15 +186,15 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Relatórios</span>
+            <i class="fa fa-edit"></i> <span>Prova Eletrónica</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <!--li><a href="../Patient/relatorioGeralPayment.php"><i class="fa fa-plus-circle"></i> Pagementos Gerais</a></li-->
-            <li><a href="../Appointment/RelatorioConsult.php"><i class="fa fa-edit"></i> Consultas </a></li>
-            <li><a href="../Admin/Relatorioestatisticas.php"><i class="fa fa-edit"></i>Estatísticas Gerais </a></li>
+            <li><a href="../provaEletronica/Provas.php"><i class="fa fa-edit"></i>Provas </a></li>
+            <li><a href="../provaEletronica/marcar.php"><i class="fa fa-edit"></i>Marcar </a></li>
       
           </ul>  
              
@@ -214,12 +214,28 @@
         
           </ul>
           <li>
+           <li class="treeview">
+          <a href="#">
+            <i class="fa fa-medkit"></i> <span>Relatório</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <!--li><a href="../Patient/relatorioGeralPayment.php"><i class="fa fa-plus-circle"></i> Pagementos Gerais</a></li-->
+            <li><a href="../Appointment/RelatorioConsult.php"><i class="fa fa-edit"></i> Consultas </a></li>
+            <li><a href="../Admin/Relatorioestatisticas.php"><i class="fa fa-edit"></i>Estatísticas Gerais </a></li>
+      
+          </ul>  
+             
+        </li>
+          <li>
         <a class="nav-link"  href="../mensagem/home/my_messages"><i class="fa fa-send"></i><span>Chat</span></a>
    
         </li>
         </ul>
         
-
+      
         
     </section>
     <!-- /.sidebar -->

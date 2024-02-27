@@ -113,7 +113,6 @@ while ($row1 =mysqli_fetch_array($res)) {
 </select>  
 </div>
  
-
   <div class="col-md-6">
   <!--label>Email do Paciente</label-->
   <input type="hidden" class="form-control" name="emaildocliente" id="emailpaciente" value="<?php echo ($_SESSION ['email'] ); ?>"/>
@@ -129,8 +128,6 @@ while ($row1 =mysqli_fetch_array($res)) {
 <?php $ret=mysqli_query($connection,"select * from especialidade");
 while($row=mysqli_fetch_array($ret))
 {
-
-
 ?>
 <option value="<?php echo ($row['Nome']);?>">
 																	<?php echo ($row['Nome']);?>

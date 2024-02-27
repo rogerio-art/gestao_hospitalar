@@ -43,7 +43,7 @@ $p_row1=mysqli_fetch_array($p_query);
        </div>
 	<div class="row invoice-info">
  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 		<img src="../Upload/Adminprofile/Logotipo%20Clinica%20Saude.png" width="120" height="120" alt="Stethoscope free icon" title="Stethoscope free icon">
+ 		<img src="../Upload/Adminprofile/Logotipo%20Clinica%20Saude.png" width="80" height="80" alt="Stethoscope free icon" title="Stethoscope free icon">
     
 		 <div class="col-sm-4 invoice-col" style="float: right;">
           <b>Código da Fatura: <?php echo "1234567";?></b><br>

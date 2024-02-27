@@ -15,32 +15,51 @@
      })
   })
   </script> 
-  
-
-<?php
-//include("../inc/connect.php") ;
-
-//session_start();
-if(isset($_POST['submit']))
-
-{
-  
+  <?php
+if(isset($_POST['submit'])) {
     $patient=$_POST['patient'];
     $data=$_POST['data'];
-    $resultadoexame = isset($_POST['resultadoexame']) ? $_POST['resultadoexame'] : array();
     $note=$_POST['note'];
+    $valueTotal=$_POST['totalvalue'];
     $patientname=$_POST['patientname'];
-    $preco = isset($_POST['preco']) ? $_POST['preco'] : array();
+     // Inicializa os arrays
+     $listaExame = isset($_POST['listaExame']) ? $_POST['listaExame'] : array();
+     //$preco = isset($_POST['preco']) ? $_POST['preco'] : array();
+     $exameNameListfinal = implode(',', $listaExame);
+    
+    $parts = explode(",,", $exameNameListfinal);
+    if (count($parts) >= 2) {
+      // A primeira parte antes de ",," (duas vírgulas)
+      $exameName = $parts[0];
 
-   $resultadoexame= implode("\n",$resultadoexame);
-    $preco= implode("\n",$preco);
+      // A segunda parte após ",," (duas vírgulas) até o último caractere
+      $examePreco = $parts[1];
+  }
+ 
+    if(empty($patientname) or (empty($exameNameListfinal))){ 
+      ?>
+      <script>
+      window.alert("Preenche todos os campos do formuário");
+  </script>
+  <meta http-equiv="refresh" content="1;url=addnewExa.php" />
+  <?php
+     }else{
+   
+    // Processa os arrays para obter os valores finais
+    
 
-    $write =mysqli_query($connection,"INSERT INTO exame(`patiente`,`data`,`nameexame`,`preco`,`patientname`,`note`) VALUES ('$patient','$data','$resultadoexame','$preco','$patientname','$note')") or die(mysqli_error($connection));
-    //$query=mysql_query("SELECT * FROM user ")or die (mysql_error());
-      //$numrows=mysql_num_rows($query)or die (mysql_error());
-     //  echo " <script>setTimeout(\"location.href='../Exame/examelist.php';\",150);</script>";
+    $note = $_POST['note'];
+    $valueTotal = $_POST['totalvalue'];
+    $patientname = $_POST['patientname'];
+
+    // Restante do seu código PHP para inserção no banco de dados
+    $write = mysqli_query($connection, "INSERT INTO exame(`patiente`,`data`,`nameexame`, `preco`,`patientname`,`note`,`PrecoTotal`) VALUES ('$patient','$data','$exameName','$examePreco','$patientname','$note',' $valueTotal')") or die(mysqli_error($connection));
+    header("refresh:1;url=examelist.php");
+}
 }
 ?>
+
+
 
 <?php
 $q1=mysqli_query($connection,"SELECT * FROM mainservices")or die (mysqli_error($connection));
@@ -69,6 +88,14 @@ $ ("#categoryselect") .change(function(){
    })
 })
 </script> 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lameira Soft</title>
+</head>
+<body>
 
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -98,7 +125,7 @@ $ ("#categoryselect") .change(function(){
                     
             <div class="container">
                 <label for="exampleInputEmail1">Nome do Paciente</label><br>
-             <select name="patient" id="patient"  class="form-control select2"  style="width:100%;">
+             <select name="patient" id="patient"  class="form-control select2"  style="width:100%;" required="required">
 <option>
 
 <?php $p_query="SELECT * FROM beneficiario ";
@@ -116,44 +143,51 @@ while ($row1 =mysqli_fetch_array($res)) {
 $res=mysqli_query($connection,$p_query);
 while ($row1 =mysqli_fetch_array($res)) {
   echo $row1['id'];?>
-<option value="<?php echo $row1['id'];?>"><?php echo $row1['name'];?>
+<option value="<?php echo $row1['id'];?> "><?php echo $row1['name'];?> 
  </option>
 <?php } ?></select>
-        <label>Selecione um Item:</label>
+<br><br>
+        <label for="exampleInputEmail1">Selecione um Item:</label><br>
         <form id="addItemForm">
-            <select id="dropdown">
+            <select id="dropdown" name="nameExame" class="form-control select2"  style="width:100%;">
             <option value=<?php include '../Patient/dropdown.php';?>
             </select>
-            <input type="button" value="Adicionar" onclick="addSelectedItem()">
+            <br>
+            <br>
+            <input type="button" class="btn bg-blue" value="Adicionar" onclick="addSelectedItem()">
         </form>
-        
+
         <div style="display: flex; justify-content: space-between;">
-      
+
             <div style="flex: 1;">
             <div class="form-group">
                 <label>Lista de Serviços:</label>
-                <ul id="selected-items-list" name="resultadoexame">
-                    <!-- Os itens selecionados serão exibidos aqui -->
-                </ul>
+                <ul id="selected-items-list" name="resultadoexames"required="required"></ul>
+                <input type="hidden" name="listaExame[]" id="listaExame" value="" required="required">
+            </div> 
             </div>
-            </div>
-            
+
             <div style="flex: 1;">
             <div class="form-group">
                 <label>Preço do serviço:</label>
-                <ul id="added-items-list" name="preco">
-                    <!-- Os itens adicionados serão exibidos aqui -->
-                </ul>
+                <ul id="added-items-list" name="precos"required="required"></ul>
+                <input type="hidden" name="preco[]" id="preco" value=""readonly="readonly">
             </div>
         </div>
-        </div>
-        <input type="hidden" class="form-control" name="patientname" id="patientname" value="<?php echo $row1?>"  readonly="readonly">  
+        <div style="flex: 1;">
+            <div class="form-group">
+            <label>Total:</label>
+        <p id="total-value" neme ="totalvalue">0</p>
 
-        <label>Total:</label>
-        <p id="total-value">0</p>
+<input type="hidden" name="totalvalue" id="totalvalue" value="0">
+        </div>
+        </div>
+        </div>
+        <input type="hidden" class="form-control" name="patientname" id="patientname" value="<?php echo $row1?>"  >  
+        
         <div class="form-group">
-                  <label for="exampleInputPassword1">Data</label>
-                  <input type="date" class="form-control" name="data" id="data" value="<?php echo  date('Y-m-d');?>"  >
+                  <!--label for="exampleInputPassword1">Data</label-->
+                  <input type="hidden" class="form-control" name="data" id="data" value="<?php echo  date('Y-m-d');?>"  >
                   </div>
         <div class="form-group">
                   <label for="exampleInputPassword1">Nota do Exame</label>
@@ -161,7 +195,7 @@ while ($row1 =mysqli_fetch_array($res)) {
                     </textarea>
                 </div>
     </div>
-     <button type="submit"  name="submit" class="btn bg-blue">Salvar</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit"  name="submit" class="btn bg-blue">Salvar</button>
                <a href="./examelist.php" type=""  name="" class="btn bg-blue">Voltar</a>
           </div>
       </form>
@@ -170,6 +204,8 @@ while ($row1 =mysqli_fetch_array($res)) {
 </div>
 </section>
 </div>
+</body>
+</html>
 <script src="../bower_components/ckeditor/ckeditor.js">
 </script>
 <script>
@@ -195,72 +231,102 @@ while ($row1 =mysqli_fetch_array($res)) {
     //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5()
   })
-</script>
-    <script type="text/javascript">
-        function addSelectedItem() {
-            // Obter o valor selecionado na dropdown
-            var dropdown = document.getElementById("dropdown");
-            var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+  </script>
+  <script type="text/javascript">
+    function createCheckbox(name) {
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "listaExame[]"; // Use [] para receber como array no PHP
+        checkbox.value = name;
+        checkbox.checked = true; // Marcar a checkbox por padrão
 
-            // Obter o texto (mainservicename) selecionado na dropdown
-            var selectedText = dropdown.options[dropdown.selectedIndex].text;
+        return checkbox;
+    }
 
-            // Verificar se o item já foi selecionado antes de adicioná-lo à lista
-            if (!isItemAlreadySelected(selectedValue)) {
-                // Criar um novo item de lista para a lista de itens selecionados
-                var selectedListItem = document.createElement("li");
-                selectedListItem.textContent = selectedText; // Usar o texto ao invés do valor
+   
+    function addSelectedItem() {
+        var dropdown = document.getElementById("dropdown");
+        var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+        var selectedText = dropdown.options[dropdown.selectedIndex].text;
 
-                // Adicionar o item à lista de itens selecionados
-                var selectedItemsList = document.getElementById("selected-items-list");
-                selectedItemsList.appendChild(selectedListItem);
+        if (!isItemAlreadySelected(selectedText)) {
+            var selectedListItem = document.createElement("li");
+            var checkbox = createCheckbox(selectedText);
+            selectedListItem.appendChild(checkbox);
+            selectedListItem.appendChild(document.createTextNode(selectedText));
 
-                // Criar um novo item de lista para a lista de itens adicionados
-                var addedListItem = document.createElement("li");
-                addedListItem.textContent = selectedValue; // Usar o texto ao invés do valor
-                addedListItem.setAttribute("data-price", selectedValue); // Adicionar atributo com o preço
-                
-                //addedListItem.textContent = selectedValue; // Usar o valor ao invés do texto
-                //addedListItem.setAttribute("data-price", selectedValue); // Atualizar o atributo com o preço
-
-                // Adicionar o item à lista de itens adicionados
-                var addedItemsList = document.getElementById("added-items-list");
-                addedItemsList.appendChild(addedListItem);
-
-                // Atualizar o total
-                updateTotal();
-            }
-        }
-
-        function isItemAlreadySelected(itemValue) {
-            // Verificar se o item já está na lista de itens selecionados
             var selectedItemsList = document.getElementById("selected-items-list");
-            var items = selectedItemsList.getElementsByTagName("li");
+            selectedItemsList.appendChild(selectedListItem);
 
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].textContent === itemValue) {
-                    alert("Item já selecionado!");
-                    return true;
-                }
-            }
-            return false;
         }
-
-        function updateTotal() {
-            // Calcular o total dos valores na lista de itens adicionados
+        if (!isItemAlreadySelected(selectedValue)) {
+            var addedListItem = document.createElement("li");          
+            var checkboxValue = createCheckbox(selectedValue);  //addedListItem.textContent = selectedValue; // Alterado para usar o do valor em vez de texto 
+            addedListItem.appendChild(checkboxValue);
+            addedListItem.appendChild(document.createTextNode(selectedValue)); // Alterado para usar o do valor em vez de texto
+            
             var addedItemsList = document.getElementById("added-items-list");
-            var items = addedItemsList.getElementsByTagName("li");
-            var total = 0;
+            addedItemsList.appendChild(addedListItem);
+        
+            addedListItem.setAttribute("data-price", selectedValue); // Adicionar atributo com o preço
 
-            for (var i = 0; i < items.length; i++) {
-                // Usar o valor do atributo data-price para obter o preço
-                total += parseFloat(items[i].getAttribute("data-price"));
-            }
-
-            // Exibir o total no elemento HTML
-            var totalElement = document.getElementById("total-value");
-            totalElement.textContent = total;
+            // Atualizar o total
+            updateTotal();
+            updateHiddenInputs();
         }
-    </script>
+    }
+
+    function updateHiddenInputs() {
+        var selectedItemsList = document.getElementById("selected-items-list");
+        var addedItemsList = document.getElementById("added-items-list");
+
+        // Atualizar valores para os campos escondidos
+        updateHiddenInput("listaExame", selectedItemsList);
+        updateHiddenInput("preco", addedItemsList);
+    }
+
+    function updateHiddenInput(inputName, list) {
+        var items = list.getElementsByTagName("li");
+        var hiddenInput = document.getElementsByName(inputName)[0];
+        var values = [];
+
+        for (var i = 0; i < items.length; i++) {
+            values.push(items[i].textContent);
+        }
+
+        hiddenInput.value = values.join(','); // Armazenar os valores separados por vírgula
+    }
+
+    function isItemAlreadySelected(itemValue) {
+        var selectedItemsList = document.getElementById("selected-items-list");
+        var items = selectedItemsList.getElementsByTagName("li");
+
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].textContent === itemValue) {
+                alert("Item já selecionado!");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function updateTotal() {
+        var addedItemsList = document.getElementById("added-items-list");
+        var items = addedItemsList.getElementsByTagName("li");
+        var total = 0;
+
+        for (var i = 0; i < items.length; i++) {
+            total += parseFloat(items[i].getAttribute("data-price"));
+        }
+
+        var totalElement = document.getElementById("total-value");
+        totalElement.textContent = total;
+
+        // Adiciona o valor total ao campo oculto
+        document.getElementById("totalvalue").value = total;
+    }
+</script>
+
+
 
 <?php include "../Include/footer.php";?>

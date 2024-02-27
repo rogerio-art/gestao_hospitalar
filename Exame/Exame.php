@@ -71,10 +71,10 @@ function mysql_fetch_all($query) {
                             <b><p>Site |</b> www.lameirasoft.ao</p>
                           <p><strong>Nº da Exame <?= time(); ?></strong></p></h5> 
                         </th>
-                        <th ><h3> <p><strong>Resultado</strong></p></h3> </th>
+                        <th ><h3> <p><strong></strong></p></h3> </th>
                         
                      
-                      <th ><h4> <p>Paciente: <strong><?=  $p_row[0]['patientname']; ?></strong></p></h4> </th>
+                      <th ><h4> <p>Utente: <strong><?=  $p_row[0]['patientname']; ?></strong></p></h4> </th>
                    </thead>
               </table>
            </div>
@@ -90,7 +90,7 @@ function mysql_fetch_all($query) {
                          <tr>
                              <th>Data de Emissão</th>
                              <th class="text-center">Idade</th>
-                             <th class="text-center">Preço dos Exame</th>
+                             <th class="text-center">Desconto</th>
                              <th class="text-end">Gênero</th>
                          </tr>
                      </thead>
@@ -109,7 +109,7 @@ function mysql_fetch_all($query) {
       <tr>
         <td><?php echo $row['data'];?></td>
         <td class="text-center align-middle"><?php echo $row2['yearsOld'] ; ?> anos</td>
-        <td class="text-center align-middle"><?php echo $row['preco'];   ?> Kz</td>
+        <td class="text-center align-middle"><?php echo "0.00";//$row['preco'];   ?> kz</td>
         <td class="text-end align-middle"><?php echo $row2['gender'];   ?></td>
      </tr>
     <?php } ?>
@@ -135,16 +135,33 @@ function mysql_fetch_all($query) {
               <table   class="table table-bordered table-hover " >
                      <thead  >
                          <tr>
-                             <th>Resultado de Exame</th>
-                           
+                             <th>Lista de Exame</th>
+                             <th>Preço</th>
                          </tr>
                      </thead>
                      <tbody>
 
                                 <tr>
-                                <td ><?php echo $row['nameexame'];   ?> </td>
-                                      </tr>
-
+                                <td ><?php 
+                                
+                                    $examelist= $row['nameexame'];  
+                                    $exame=explode(',', $examelist);
+                                $exameshow=implode("<br>",array_map('trim',$exame));
+                                ?>
+                                <?php echo $exameshow?>
+                                <td class=""><?php $preços = $row['preco'];   
+                                $preco=explode(',', $preços);
+                                $precoShow=implode("<br>",array_map('trim',$preco));
+                                $codigo_moeda = "kz";
+                                $preco_final = implode("<br>", array_map(function($precoShow) use ($codigo_moeda) {
+                                  return number_format ($precoShow, 2,'.','.' ) . " " . $codigo_moeda;
+                              }, $preco));
+                                ?>
+                                <?php echo $preco_final ?>
+                                
+                                </td>
+                                 </td>
+                                      </tr> 
                      </tbody>
                 </table>
                 </table>
@@ -163,7 +180,21 @@ function mysql_fetch_all($query) {
 
                      </tbody>
                 </table>
-  
+                <table   class="table table-bordered table-hover " >
+                     <thead  >
+                         <tr>
+                             <th class="text-end align-middle">Preço Total</th>
+                           
+                         </tr>
+                     </thead>
+                     <tbody>
+
+                                <tr>
+                                <td class="text-end align-middle" ><?php echo number_format($row['PrecoTotal'], 2,'.','.')." kz";   ?> </td>
+                                      </tr>
+
+                     </tbody>
+                </table>
                 <?php
 $sql="SELECT * FROM login";
     $write =mysqli_query($connection, $sql) or die(mysqli_error($connection));
@@ -206,8 +237,8 @@ $sql="SELECT * FROM login";
 <div class="row">
                 <div class="col-md-6">
                          <!--button   href="./prescription.php"><span  class="btn bg-blue" class="hidden-xs" ><i class="fa fa-back"></i>Voltar</span></button--><!--&nbsp;&nbsp;-->
-         <button onclick=" window.print();" id="print-btn" class="btn bg-blue"><i class="fa  fa-print"></i>  Imprimir</button>
-         <a href="./examelist.php" class="btn bg-blue"><i class="fa  fa-recet"></i>  Voltar</a>
+         <button onclick=" window.print();" id="print-btn" class="btn bg-blue "><i class="fa  fa-print"></i>  Imprimir</button>
+         <a href="./examelist.php" class="btn bg-blue ocultar-na-impressao"><i class="fa  fa-recet"></i>  Voltar</a>
        
         </div>
         </section>   
